@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RentMyWaifu - Поддержка</title>
     <style>
-        /* ==== ВСЕ СТИЛИ ОСТАЛИСЬ ИЗ ТВОЕГО HTML ==== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; color: white; overflow-x: hidden; }
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
@@ -28,7 +27,6 @@
         .form-textarea { resize: vertical; min-height: 120px; }
         .submit-btn { background: linear-gradient(45deg, #ff6b6b, #feca57); color: white; border: none; padding: 14px 30px; border-radius: 25px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; width: 100%; }
         .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(255,107,107,0.3); }
-        /* ==== Остальные стили (слайдеры, статусы, частицы и анимации) оставлены без изменений ==== */
     </style>
 </head>
 <body>
@@ -48,7 +46,7 @@
             <a href="#" class="nav-btn" onclick="showSection('accounts')">Статусы</a>
         </nav>
 
-        <!-- ==== Support Section с Formsubmit ==== -->
+        <!-- ==== Support Section ==== -->
         <div id="support" class="content-section active">
             <div class="card">
                 <h2 style="margin-bottom: 20px; color: #ff6b6b;">📧 Форма технической поддержки</h2>
@@ -56,71 +54,87 @@
                     Для вопросов по оплатам обращайтесь к гарантам в личных сообщениях в чате.
                     Исключения: "Я долго не отвечаю в чате ЛС" - можно писать сюда.
                 </p>
-                
+
                 <form id="supportForm" action="https://formsubmit.co/myemail@gmail.com" method="POST">
-    <input type="hidden" name="_next" value="https://azim218.github.io/">
-    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://azim218.github.io/">
+                    <input type="hidden" name="_captcha" value="false">
 
-    <!-- ваши поля формы -->
-    <div class="form-group">
-        <label class="form-label">Контактный Email *</label>
-        <input type="email" class="form-input" name="email" placeholder="your@email.com" required>
-    </div>
-    <div class="form-group">
-        <label class="form-label">Тип проблемы</label>
-        <select class="form-input" name="problem_type">
-            <option>Технические проблемы</option>
-            <option>Проблемы с аккаунтом</option>
-            <option>Долго не отвечаю в ЛС</option>
-            <option>Другое</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label class="form-label">Описание проблемы *</label>
-        <textarea class="form-textarea" name="message" placeholder="Подробно опишите вашу проблему..." required></textarea>
-    </div>
+                    <div class="form-group">
+                        <label class="form-label">Контактный Email *</label>
+                        <input type="email" class="form-input" name="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Тип проблемы</label>
+                        <select class="form-input" name="problem_type">
+                            <option>Технические проблемы</option>
+                            <option>Проблемы с аккаунтом</option>
+                            <option>Долго не отвечаю в ЛС</option>
+                            <option>Другое</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Описание проблемы *</label>
+                        <textarea class="form-textarea" name="message" placeholder="Подробно опишите вашу проблему..." required></textarea>
+                    </div>
 
-    <button type="submit" class="submit-btn">Отправить запрос</button>
-</form>
+                    <button type="submit" class="submit-btn">Отправить запрос</button>
+                </form>
+            </div>
+        </div>
 
-<script>
-document.getElementById('supportForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // останавливаем стандартное поведение формы
-    
-    const form = e.target;
-    const submitBtn = form.querySelector('.submit-btn');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Отправляется...';
-    submitBtn.disabled = true;
+        <!-- ==== FAQ Section ==== -->
+        <div id="faq" class="content-section">
+            <div class="card">
+                <h2 style="margin-bottom: 20px; color: #ff6b6b;">📖 FAQ</h2>
+                <p style="opacity: 0.9;">Раздел в разработке...</p>
+            </div>
+        </div>
 
-    // Отправка формы через fetch
-    fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-    }).then(response => {
-        if (response.ok) {
-            // Показать сообщение благодарности
-            alert('Спасибо! Мы скоро с вами свяжемся. Примерное время: 30-240 минут.');
-            form.reset();
-        } else {
-            alert('Ошибка отправки. Попробуйте позже.');
-        }
-    }).catch(error => {
-        alert('Ошибка отправки. Попробуйте позже.');
-    }).finally(() => {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    });
-});
-</script>
+        <!-- ==== Guarantors Section ==== -->
+        <div id="guarantors" class="content-section">
+            <div class="card">
+                <h2 style="margin-bottom: 20px; color: #ff6b6b;">🤝 Площадки</h2>
+                <div class="form-group">
+                    <h3 style="color:#feca57;">FunPay (рекомендовано)</h3>
+                    <p style="opacity:0.9; margin-bottom:10px;">Основная площадка для сделок. Надежная и быстрая.</p>
+                    <a href="https://funpay.com/users/16448769/" target="_blank" class="submit-btn" style="width:auto; display:inline-block;">Перейти</a>
+                </div>
+                <div class="form-group">
+                    <h3 style="color:#feca57;">Playerok (ожидание может быть дольше)</h3>
+                    <p style="opacity:0.9; margin-bottom:10px;">Альтернативная площадка, иногда время ожидания больше.</p>
+                    <a href="https://playerok.com/profile/RentMyWaifu/products" target="_blank" class="submit-btn" style="width:auto; display:inline-block;">Перейти</a>
+                </div>
+            </div>
+        </div>
 
-        <!-- ==== Остальные секции (FAQ, Guarantors, Features, Accounts) оставлены без изменений ==== -->
+        <!-- ==== Features Section ==== -->
+        <div id="features" class="content-section">
+            <div class="card">
+                <h2 style="margin-bottom: 20px; color: #ff6b6b;">💎 АБСОЛЮТНОЕ ПРЕВОСХОДСТВО</h2>
+                <ul style="list-style:none; padding-left:0; line-height:1.8;">
+                    <li>✔️ Быстрая и безопасная выдача аккаунтов</li>
+                    <li>✔️ Поддержка 24/7</li>
+                    <li>✔️ Работаем только через проверенные площадки</li>
+                    <li>✔️ Бонусы и кешбек за активность</li>
+                </ul>
+            </div>
+        </div>
 
+        <!-- ==== Accounts Section ==== -->
+        <div id="accounts" class="content-section">
+            <div class="card">
+                <h2 style="margin-bottom: 20px; color: #ff6b6b;">🏆 Статусы</h2>
+                <ul style="list-style:none; padding-left:0; line-height:1.8;">
+                    <li><b>🥉 Bronze</b> — от 5 баллов, кешбек <b>1%</b> + <b>0%</b> бонусных баллов</li>
+                    <li><b>🥈 Silver</b> — от 50 баллов, кешбек <b>5%</b> + <b>10%</b> бонусных баллов</li>
+                    <li><b>🥇 Gold</b> — от 100 баллов, кешбек <b>10%</b> + <b>20%</b> бонусных баллов</li>
+                    <li><b>💎 Ultimate</b> — от 300 баллов, кешбек <b>30%</b> + <b>60%</b> бонусных баллов</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <script>
-        // ==== Скрипт переключения секций ====
         function showSection(sectionId) {
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(section => section.classList.remove('active'));
@@ -130,54 +144,31 @@ document.getElementById('supportForm').addEventListener('submit', function(e) {
             event.target.classList.add('active');
         }
 
-        // ==== Эффект кнопки "Отправляется..." для Formsubmit ====
         document.getElementById('supportForm').addEventListener('submit', function(e) {
-            const submitBtn = e.target.querySelector('.submit-btn');
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = form.querySelector('.submit-btn');
             const originalText = submitBtn.textContent;
             submitBtn.textContent = 'Отправляется...';
             submitBtn.disabled = true;
-            setTimeout(() => {
+
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    alert('Спасибо! Мы скоро с вами свяжемся. Примерное время: 30-240 минут.');
+                    form.reset();
+                } else {
+                    alert('Ошибка отправки. Попробуйте позже.');
+                }
+            }).catch(error => {
+                alert('Ошибка отправки. Попробуйте позже.');
+            }).finally(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
-            }, 2000);
-        });
-
-        // ==== Остальные скрипты: частицы, слайдеры, анимации ====
-        function createParticles() {
-            const particlesContainer = document.querySelector('.floating-particles');
-            for (let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 6 + 's';
-                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
-                particlesContainer.appendChild(particle);
-            }
-        }
-        window.addEventListener('load', createParticles);
-
-        // ==== Навигация по слайдерам и touch/swipe поддержка ====
-        let currentGuarantorSlide = 0;
-        let currentStatusSlide = 0;
-        function showGuarantorSlide(slideIndex) { /* ... оставляем твои функции ... */ }
-        function showStatusSlide(slideIndex) { /* ... оставляем твои функции ... */ }
-        setInterval(() => {
-            if (document.getElementById('guarantors').classList.contains('active')) {
-                showGuarantorSlide((currentGuarantorSlide + 1) % 2);
-            }
-        }, 5000);
-
-        // Touch/swipe поддержка
-        let startX = null;
-        document.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
-        document.addEventListener('touchend', e => { if (!startX) return; const endX = e.changedTouches[0].clientX; const diffX = startX - endX; startX = null; });
-
-        // Эффекты клика для кнопок
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('submit-btn') || e.target.classList.contains('nav-btn') || e.target.classList.contains('contact-btn')) {
-                e.target.style.transform = 'scale(0.95)';
-                setTimeout(() => { e.target.style.transform = ''; }, 150);
-            }
+            });
         });
     </script>
 </body>
