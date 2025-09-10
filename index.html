@@ -469,83 +469,204 @@
       <p class="tagline">Премиум сервис аккаунтов <span class="premium-badge">VIP</span></p>
     </div>
 
-    <div class="nav">
-      <button class="nav-btn active" data-target="section1">Главная</button>
-      <button class="nav-btn" data-target="section2">О нас</button>
-      <button class="nav-btn" data-target="section3">Поддержка</button>
+    <nav class="nav">
+      <a href="#" class="nav-btn active" onclick="showSection('support')">Поддержка</a>
+      <a href="#" class="nav-btn" onclick="showSection('faq')">FAQ</a>
+      <a href="#" class="nav-btn" onclick="showSection('guarantors')">Площадки</a>
+      <a href="#" class="nav-btn" onclick="showSection('features')">Превосходство</a>
+      <a href="#" class="nav-btn" onclick="showSection('accounts')">Статусы</a>
+    </nav>
+
+    <!-- Поддержка -->
+    <div id="support" class="content-section active">
+      <div class="big-card">
+        <div class="emoji">🎧</div>
+        <h3>Техническая поддержка 24/7</h3>
+        <p>Для вопросов по оплатам обращайтесь к гарантам в ЛС. Исключение: "Я долго не отвечаю в чате" — можно писать сюда.</p>
+
+        
+
+    <!-- FAQ -->
+    <div id="faq" class="content-section">
+      <div class="big-card">
+        <div class="emoji">📚</div>
+        <h3>Часто задаваемые вопросы</h3>
+        <p>Раздел находится в активной разработке. Скоро здесь появятся ответы на самые популярные вопросы!</p>
+      </div>
+    </div>
+<div class="form-container">
+  <form id="supportForm" action="https://formsubmit.co/rentmywaifu@outlook.com" method="POST">
+    <input type="hidden" name="_next" value="https://rentmywaifu.ddns.net/">
+    <input type="hidden" name="_captcha" value="false">
+    <div class="form-row">
+      <input type="email" class="form-input" name="email" placeholder="Ваш email" required>
+      <input type="text" class="form-input" name="order_number" placeholder="Номер заказа (необязательно)">
+    </div>
+    <select class="form-select form-input" name="problem_type">
+      <option>Технические проблемы</option>
+      <option>Проблемы с аккаунтом</option>
+      <option>Долго не отвечаю в ЛС</option>
+      <option>Вопрос по заказу</option>
+      <option>Предложение/Жалоба</option>
+      <option>Другое</option>
+    </select>
+    <textarea class="form-textarea" name="message" placeholder="Подробно опишите вашу проблему или вопрос..." required></textarea>
+    <button type="submit" class="submit-btn"><span>🚀 Отправить запрос</span></button>
+  </form>
+</div>
+
+<script>
+  document.getElementById('supportForm').addEventListener('submit', function(e) {
+    const form = e.target;
+    const btn = form.querySelector('.submit-btn');
+    const span = btn.querySelector('span');
+    const originalText = span.innerHTML;
+
+    // Блокируем кнопку и показываем прогресс
+    btn.disabled = true;
+    span.innerHTML = '⏳ Отправляется...';
+
+    // Немного задержки перед отправкой, чтобы пользователь видел прогресс
+    setTimeout(() => form.submit(), 100);
+  });
+    <!-- Площадки -->
+    <div id="guarantors" class="content-section">
+      <div class="big-card">
+        <div class="emoji">🏆</div>
+        <h3>FunPay (рекомендовано)</h3>
+        <p>Основная площадка для сделок. Надежная, быстрая и проверенная временем.</p>
+        <a href="https://funpay.com/users/16448769/" target="_blank">🎮 Перейти на FunPay</a>
+      </div>
+      <div class="big-card">
+        <div class="emoji">⏰</div>
+        <h3>Playerok (альтернатива)</h3>
+        <p>Дополнительная площадка. Время обработки заказов может быть немного больше.</p>
+        <a href="https://playerok.com/profile/RentMyWaifu/products" target="_blank">🎯 Перейти на Playerok</a>
+      </div>
     </div>
 
-    <div id="section1" class="content-section active">
-      <div class="big-card status-gold">
+    <!-- Превосходство -->
+    <div id="features" class="content-section">
+      <div class="big-card sparkle">
         <div class="emoji">💎</div>
-        <h3>Добро пожаловать!</h3>
-        <p>Здесь вы можете арендовать аккаунты с премиум статусом и получать уникальные бонусы.</p>
-        <a href="#">Начать</a>
+        <h3>АБСОЛЮТНОЕ ПРЕВОСХОДСТВО</h3>
+        <p>Мы устанавливаем стандарты качества в индустрии!</p>
+      </div>
+      <div class="big-card">
+        <div class="emoji">⚡</div>
+        <h3>Мгновенная выдача аккаунтов</h3>
+        <p>Автоматическая система доставки аккаунтов в течение нескольких минут после оплаты.</p>
+      </div>
+      <div class="big-card">
+        <div class="emoji">🛡️</div>
+        <h3>Круглосуточная поддержка</h3>
+        <p>Наша команда профессионалов готова помочь вам в любое время дня и ночи.</p>
+      </div>
+      <div class="big-card">
+        <div class="emoji">✅</div>
+        <h3>Проверенные площадки</h3>
+        <p>Сотрудничаем исключительно с надежными и безопасными торговыми платформами.</p>
+      </div>
+      <div class="big-card">
+        <div class="emoji">🎁</div>
+        <h3>Система лояльности</h3>
+        <p>Бонусы, кешбек и специальные предложения для постоянных клиентов.</p>
       </div>
     </div>
 
-    <div id="section2" class="content-section">
+    <!-- Статусы -->
+    <div id="accounts" class="content-section">
+      <div class="big-card status-bronze">
+        <div class="emoji">🥉</div>
+        <h3>Bronze Status</h3>
+        <p>от 5 баллов • кешбек 1% + 0% бонусных баллов • Базовые привилегии</p>
+      </div>
       <div class="big-card status-silver">
-        <div class="emoji">📜</div>
-        <h3>О нас</h3>
-        <p>Мы предоставляем безопасные аренды аккаунтов с гарантиями и круглосуточной поддержкой.</p>
-        <a href="#">Подробнее</a>
+        <div class="emoji">🥈</div>
+        <h3>Silver Status</h3>
+        <p>от 50 баллов • кешбек 5% + 10% бонусных баллов • Приоритетная поддержка</p>
       </div>
-    </div>
-
-    <div id="section3" class="content-section">
-      <div class="form-container">
-        <form id="supportForm" action="/submit" method="POST">
-          <div class="form-row">
-            <input type="text" name="name" placeholder="Ваше имя" class="form-input" required>
-            <input type="email" name="email" placeholder="Ваш email" class="form-input" required>
-          </div>
-          <input type="text" name="subject" placeholder="Тема" class="form-input" required>
-          <select name="type" class="form-select" required>
-            <option value="">Тип запроса</option>
-            <option value="question">Вопрос</option>
-            <option value="problem">Проблема</option>
-            <option value="feedback">Обратная связь</option>
-          </select>
-          <textarea name="message" placeholder="Сообщение" class="form-textarea" required></textarea>
-          <button type="submit" class="submit-btn"><span>Отправить</span></button>
-        </form>
+      <div class="big-card status-gold">
+        <div class="emoji">🥇</div>
+        <h3>Gold Status</h3>
+        <p>от 100 баллов • кешбек 10% + 20% бонусных баллов • VIP обслуживание</p>
+      </div>
+      <div class="big-card status-ultimate">
+        <div class="emoji">🔮</div>
+        <h3>Ultimate Status</h3>
+        <p>от 300 баллов • кешбек 30% + 60% бонусных баллов • Эксклюзивные предложения</p>
       </div>
     </div>
   </div>
 
   <script>
-    // Навигация
-    document.querySelectorAll('.nav-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const target = btn.getAttribute('data-target');
-        document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
-        document.getElementById(target).classList.add('active');
-      });
-    });
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+      const buttons = document.querySelectorAll('.nav-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
 
-    // Форма с исправленным скриптом
     document.getElementById('supportForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const submitBtn = form.querySelector('.submit-btn span');
-      const btnWrapper = form.querySelector('.submit-btn');
-      const originalText = submitBtn.innerHTML;
+  e.preventDefault();
+  const form = e.target;
+  const submitBtn = form.querySelector('.submit-btn span');
+  const originalText = submitBtn.innerHTML;
 
-      submitBtn.innerHTML = '⏳ Отправляется...';
-      btnWrapper.disabled = true;
+  // Меняем текст кнопки на "Отправляется..."
+  submitBtn.innerHTML = '⏳ Отправляется...';
+  form.querySelector('.submit-btn').disabled = true;
 
+  // Отправка через fetch без ожидания редиректа
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    redirect: 'manual' // игнорируем редирект
+  })
+  .then(response => {
+    // Любой успешный статус (200-299) считаем отправкой
+    if (response.ok || response.type === 'opaqueredirect') {
+      submitBtn.innerHTML = '✅ Отправлено!';
       setTimeout(() => {
-        form.submit(); // обычный submit
+        alert('🎉 Спасибо! Ваш запрос успешно отправлен.\n\n⏰ Мы свяжемся с вами в течение 30-240 минут.\n📧 Ответ придет на указанный email.');
       }, 200);
-
+      form.reset();
+    } else {
+      submitBtn.innerHTML = '❌ Ошибка';
       setTimeout(() => {
-        alert('🎉 Форма отправлена!\n⏰ Ответ придет на указанный email.');
-        submitBtn.innerHTML = originalText;
-        btnWrapper.disabled = false;
-      }, 1000);
+        alert('⚠️ Произошла ошибка при отправке.\nПожалуйста, попробуйте позже или свяжитесь с нами напрямую.');
+      }, 200);
+    }
+  })
+  .catch(error => {
+    submitBtn.innerHTML = '❌ Ошибка';
+    setTimeout(() => {
+      alert('⚠️ Произошла ошибка при отправке.\nПроверьте подключение к интернету и попробуйте еще раз.');
+    }, 200);
+  })
+  .finally(() => {
+    setTimeout(() => {
+      submitBtn.innerHTML = originalText;
+      form.querySelector('.submit-btn').disabled = false;
+    }, 2000);
+  });
+});
+
+    // Добавляем плавные переходы при прокрутке
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.big-card');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationDelay = Math.random() * 0.3 + 's';
+            entry.target.classList.add('animate');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      cards.forEach(card => observer.observe(card));
     });
   </script>
 </body>
