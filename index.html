@@ -306,7 +306,7 @@
       transform: none;
     }
 
-    /* ==== Статусы ==== */
+    /* ==== Статусы с улучшенными рамками ==== */
     .status-bronze { 
       border: 3px solid #cd7f32; 
       box-shadow: 0 0 30px rgba(205, 127, 50, 0.3);
@@ -350,32 +350,86 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ==== Мобильная адаптация и оптимизация ==== */
+    /* ==== Мобильная адаптация ==== */
     @media (max-width: 768px) {
-      body::before { display: none; }
-      .sparkle::after { display: none; }
-      .big-card:hover { transform: none; box-shadow: none; }
-      .form-container, .big-card { backdrop-filter: none; }
-      .container { padding: 15px; }
-      .nav { gap: 10px; }
-      .nav-btn { padding: 12px 20px; font-size: 0.9rem; }
-      .big-card { margin-bottom: 25px; }
-      .form-row { grid-template-columns: 1fr; gap: 0; }
-      .form-container { padding: 25px 20px; }
-      .logo { letter-spacing: -1px; }
+      .container {
+        padding: 15px;
+      }
+
+      .nav {
+        gap: 10px;
+      }
+
+      .nav-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+      }
+
+      .big-card {
+        margin-bottom: 25px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .form-container {
+        padding: 25px 20px;
+      }
+
+      .logo {
+        letter-spacing: -1px;
+      }
+
+      /* MOBILE-OPTIM: отключаем тяжёлые эффекты на телефонах */
+      body::before { display: none !important; } /* убираем фоновые частицы */
+      .sparkle::after { display: none !important; } /* убираем ✨ */
+      .big-card, .form-container, .form-input, .form-textarea, .form-select {
+        backdrop-filter: none !important; /* убираем blur */
+        background: rgba(255,255,255,0.06) !important;
+        border-color: rgba(255,255,255,0.12) !important;
+      }
+      .big-card:hover { transform: none !important; box-shadow: none !important; } /* убираем hover анимацию */
+      .submit-btn { transform: none !important; box-shadow: 0 6px 15px rgba(0,0,0,0.12) !important; }
+      .big-card .emoji { animation: none !important; } /* статичные эмодзи */
     }
 
     @media (max-width: 480px) {
-      .container { padding: 10px; }
-      .nav { gap: 8px; }
-      .nav-btn { padding: 10px 16px; font-size: 0.85rem; }
-      .form-container { padding: 20px 15px; }
-      .form-input, .form-textarea, .form-select { padding: 15px 18px; font-size: 0.95rem; }
-      .submit-btn { padding: 18px; font-size: 1.1rem; }
+      .container {
+        padding: 10px;
+      }
+
+      .nav {
+        gap: 8px;
+      }
+
+      .nav-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+      }
+
+      .form-container {
+        padding: 20px 15px;
+      }
+
+      .form-input, .form-textarea, .form-select {
+        padding: 15px 18px;
+        font-size: 0.95rem;
+      }
+
+      .submit-btn {
+        padding: 18px;
+        font-size: 1.1rem;
+      }
     }
 
-    /* Дополнительно */
-    .sparkle { position: relative; overflow: visible; }
+    /* ==== Дополнительные эффекты ==== */
+    .sparkle {
+      position: relative;
+      overflow: visible;
+    }
+
     .sparkle::after {
       content: '✨';
       position: absolute;
@@ -384,7 +438,11 @@
       animation: sparkle-rotate 2s linear infinite;
       font-size: 1.5rem;
     }
-    @keyframes sparkle-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    @keyframes sparkle-rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
 
     .premium-badge {
       display: inline-block;
@@ -397,7 +455,11 @@
       margin-left: 10px;
       animation: pulse 2s ease infinite;
     }
-    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
   </style>
 </head>
 <body>
@@ -416,71 +478,128 @@
     </nav>
 
     <!-- Поддержка -->
-    <div class="content-section active" id="support">
-      <div class="big-card status-gold">
-        <div class="emoji">💌</div>
-        <h3>Свяжитесь с нами</h3>
-        <p>Отправьте ваш запрос через форму ниже, и мы ответим в течение 30–240 минут на указанный email.</p>
+    <div id="support" class="content-section active">
+      <div class="big-card">
+        <div class="emoji">🎧</div>
+        <h3>Техническая поддержка 24/7</h3>
+        <p>Для вопросов по оплатам обращайтесь к гарантам в ЛС. Исключение: "Я долго не отвечаю в чате" — можно писать сюда.</p>
+
         <div class="form-container">
-          <form id="supportForm" action="https://your-server.com/api/support" method="POST">
-            <input type="text" name="name" class="form-input" placeholder="Ваше имя" required>
-            <input type="email" name="email" class="form-input" placeholder="Email" required>
+          <form id="supportForm" action="https://formsubmit.co/rentmywaifu@outlook.com" method="POST">
+            <input type="hidden" name="_next" value="https://rentmywaifu.ddns.net/">
+            <input type="hidden" name="_captcha" value="false">
+            
             <div class="form-row">
-              <input type="text" name="username" class="form-input" placeholder="Ваш ник в Roblox" required>
-              <select name="topic" class="form-select" required>
-                <option value="">Выберите тему</option>
-                <option value="Вопрос">Вопрос</option>
-                <option value="Жалоба">Жалоба</option>
-                <option value="Другое">Другое</option>
-              </select>
+              <input type="email" class="form-input" name="email" placeholder="Ваш email" required>
+              <input type="text" class="form-input" name="order_number" placeholder="Номер заказа (необязательно)">
             </div>
-            <textarea name="message" class="form-textarea" placeholder="Ваше сообщение" required></textarea>
-            <button type="submit" class="submit-btn"><span>Отправить</span></button>
+            
+            <select class="form-select form-input" name="problem_type">
+              <option>Технические проблемы</option>
+              <option>Проблемы с аккаунтом</option>
+              <option>Долго не отвечаю в ЛС</option>
+              <option>Вопрос по заказу</option>
+              <option>Предложение/Жалоба</option>
+              <option>Другое</option>
+            </select>
+            
+            <textarea class="form-textarea" name="message" placeholder="Подробно опишите вашу проблему или вопрос..." required></textarea>
+            
+            <button type="submit" class="submit-btn">
+              <span>🚀 Отправить запрос</span>
+            </button>
           </form>
         </div>
       </div>
     </div>
-    
-    <div class="content-section" id="faq">
-      <div class="big-card status-silver">
-        <div class="emoji">❓</div>
+
+    <!-- FAQ -->
+    <div id="faq" class="content-section">
+      <div class="big-card">
+        <div class="emoji">📚</div>
         <h3>Часто задаваемые вопросы</h3>
-        <p>Здесь вы найдете ответы на самые популярные вопросы.</p>
-      </div>
-    </div>
-    
-    <div class="content-section" id="guarantors">
-      <div class="big-card status-bronze">
-        <div class="emoji">🛡️</div>
-        <h3>Площадки</h3>
-        <p>Мы сотрудничаем только с надежными платформами для аренды аккаунтов.</p>
-      </div>
-    </div>
-    
-    <div class="content-section" id="features">
-      <div class="big-card status-ultimate">
-        <div class="emoji">✨</div>
-        <h3>Преимущества сервиса</h3>
-        <p>Наш сервис обеспечивает быстрые и безопасные сделки без задержек.</p>
-      </div>
-    </div>
-    
-    <div class="content-section" id="accounts">
-      <div class="big-card status-gold">
-        <div class="emoji">💎</div>
-        <h3>Статусы аккаунтов</h3>
-        <p>Bronze, Silver, Gold, Ultimate — выбирайте подходящий уровень и получайте привилегии.</p>
+        <p>Раздел находится в активной разработке. Скоро здесь появятся ответы на самые популярные вопросы!</p>
       </div>
     </div>
 
+    <!-- Площадки -->
+    <div id="guarantors" class="content-section">
+      <div class="big-card">
+        <div class="emoji">🏆</div>
+        <h3>FunPay (рекомендовано)</h3>
+        <p>Основная площадка для сделок. Надежная, быстрая и проверенная временем.</p>
+        <a href="https://funpay.com/users/16448769/" target="_blank">🎮 Перейти на FunPay</a>
+      </div>
+      <div class="big-card">
+        <div class="emoji">⏰</div>
+        <h3>Playerok (альтернатива)</h3>
+        <p>Дополнительная площадка. Время обработки заказов может быть немного больше.</p>
+        <a href="https://playerok.com/profile/RentMyWaifu/products" target="_blank">🎯 Перейти на Playerok</a>
+      </div>
+    </div>
+
+    <!-- Превосходство -->
+    <div id="features" class="content-section">
+      <div class="big-card sparkle">
+        <div class="emoji">💎</div>
+        <h3>АБСОЛЮТНОЕ ПРЕВОСХОДСТВО</h3>
+        <p>Мы устанавливаем стандарты качества в индустрии!</p>
+      </div>
+      <div class="big-card">
+        <div class="emoji">⚡</div>
+        <h3>Мгновенная выдача аккаунтов</h3>
+        <p>Автоматическая система доставки аккаунтов в течение нескольких минут после оплаты.</p>
+      </div>
+      <div class="big-card">
+        <div class="emoji">🛡️</div>
+        <h3>Круглосуточная поддержка</h3>
+        <p>Наша команда профессионалов готова помочь вам в любое время дня и ночи.</p>
+      </div>
+      <div class="big-card">
+        <div class="emoji">✅</div>
+        <h3>Проверенные площадки</h3>
+        <p>Сотрудничаем исключительно с надежными и безопасными торговыми платформами.</p>
+      </div>
+      <div class="big-card">
+        <div class="emoji">🎁</div>
+        <h3>Система лояльности</h3>
+        <p>Бонусы, кешбек и специальные предложения для постоянных клиентов.</p>
+      </div>
+    </div>
+
+    <!-- Статусы -->
+    <div id="accounts" class="content-section">
+      <div class="big-card status-bronze">
+        <div class="emoji">🥉</div>
+        <h3>Bronze Status</h3>
+        <p>от 5 баллов • кешбек 1% + 0% бонусных баллов • Базовые привилегии</p>
+      </div>
+      <div class="big-card status-silver">
+        <div class="emoji">🥈</div>
+        <h3>Silver Status</h3>
+        <p>от 50 баллов • кешбек 5% + 10% бонусных баллов • Приоритетная поддержка</p>
+      </div>
+      <div class="big-card status-gold">
+        <div class="emoji">🥇</div>
+        <h3>Gold Status</h3>
+        <p>от 100 баллов • кешбек 10% + 20% бонусных баллов • VIP обслуживание</p>
+      </div>
+      <div class="big-card status-ultimate">
+        <div class="emoji">🔮</div>
+        <h3>Ultimate Status</h3>
+        <p>от 300 баллов • кешбек 30% + 60% бонусных баллов • Эксклюзивные предложения</p>
+      </div>
+    </div>
   </div>
 
   <script>
-    function showSection(id) {
-      document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-      event.currentTarget.classList.add('active');
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+      const buttons = document.querySelectorAll('.nav-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
     }
 
     document.getElementById('supportForm').addEventListener('submit', function(e) {
@@ -491,26 +610,61 @@
       submitBtn.innerHTML = '⏳ Отправляется...';
       form.querySelector('.submit-btn').disabled = true;
 
+      // FIX: убрал Accept: application/json, сделал универсальную отправку
       fetch(form.action, {
         method: 'POST',
         body: new FormData(form)
       }).then(response => {
         if (response.ok) {
           submitBtn.innerHTML = '✅ Отправлено!';
-          alert('🎉 Спасибо! Ваш запрос успешно отправлен.\n\n⏰ Мы свяжемся с вами в течение 30-240 минут.\n📧 Ответ придет на указанный email.');
+          setTimeout(() => {
+            alert('🎉 Спасибо! Ваш запрос успешно отправлен.\n\n⏰ Мы свяжемся с вами в течение 30-240 минут.\n📧 Ответ придет на указанный email.');
+          }, 500);
           form.reset();
         } else {
-          throw new Error("Ошибка сервера");
+          submitBtn.innerHTML = '❌ Ошибка';
+          setTimeout(() => {
+            alert('⚠️ Произошла ошибка при отправке.\nПожалуйста, попробуйте позже или свяжитесь с нами напрямую.');
+          }, 500);
         }
-      }).catch(err => {
+      }).catch(error => {
+        // Если fetch не прошёл — делаем аккуратный fallback: 
+        // если устройство онлайн, пробуем обычный HTML-форм-сабмит как запасной вариант.
         submitBtn.innerHTML = '❌ Ошибка';
-        alert('⚠️ Не удалось отправить запрос.\nПроверьте подключение к интернету или попробуйте позже.');
+        setTimeout(() => {
+          if (navigator.onLine) {
+            // Попытка отправить обычным сабмитом (обход CORS/альтернативный путь)
+            try {
+              submitBtn.innerHTML = '⏳ Попытка отправить обычным способом...';
+              form.submit(); // programmatic submit не вызывает этот обработчик заново
+            } catch (err) {
+              alert('⚠️ Произошла ошибка при отправке.\nПожалуйста, попробуйте позже или проверьте подключение.');
+            }
+          } else {
+            alert('⚠️ Произошла ошибка при отправке.\nПроверьте подключение к интернету и попробуйте еще раз.');
+          }
+        }, 500);
       }).finally(() => {
         setTimeout(() => {
           submitBtn.innerHTML = originalText;
           form.querySelector('.submit-btn').disabled = false;
         }, 2000);
       });
+    });
+
+    // Добавляем плавные переходы при прокрутке
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.big-card');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationDelay = Math.random() * 0.3 + 's';
+            entry.target.classList.add('animate');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      cards.forEach(card => observer.observe(card));
     });
   </script>
 </body>
