@@ -607,12 +607,10 @@
 
 document.getElementById('supportForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  if (formAlreadySubmitted) return; // защита от повторного сабмита
-  formAlreadySubmitted = true;
-
   const form = e.target;
   const submitBtn = form.querySelector('.submit-btn span');
   const originalText = submitBtn.innerHTML;
+
   submitBtn.innerHTML = '⏳ Отправляется...';
   form.querySelector('.submit-btn').disabled = true;
 
@@ -622,35 +620,22 @@ document.getElementById('supportForm').addEventListener('submit', function(e) {
   }).then(response => {
     if (response.ok) {
       submitBtn.innerHTML = '✅ Отправлено!';
-      setTimeout(() => {
-        alert('🎉 Спасибо! Ваш запрос успешно отправлен.');
-      }, 500);
+      setTimeout(() => alert('🎉 Спасибо! Ваш запрос отправлен!'), 500);
       form.reset();
     } else {
-      submitBtn.innerHTML = '❌ Ошибка';
-      setTimeout(() => {
-        alert('⚠️ Произошла ошибка при отправке. Попробуйте позже.');
-      }, 500);
+      throw new Error('Ошибка при отправке через fetch');
     }
   }).catch(error => {
+    // Не делаем form.submit()! Просто показываем сообщение
     submitBtn.innerHTML = '❌ Ошибка';
     setTimeout(() => {
-      if (navigator.onLine) {
-        try {
-          // fallback отправка
-          form.submit();
-        } catch (err) {
-          alert('⚠️ Произошла ошибка при отправке.');
-        }
-      } else {
-        alert('⚠️ Проверьте подключение к интернету.');
-      }
+      alert('⚠️ Произошла ошибка при отправке.\nПожалуйста, попробуйте позже.');
     }, 500);
+    console.error(error);
   }).finally(() => {
     setTimeout(() => {
       submitBtn.innerHTML = originalText;
       form.querySelector('.submit-btn').disabled = false;
-      formAlreadySubmitted = false; // сбрасываем только если нужно повторно разрешить
     }, 2000);
   });
 });
