@@ -331,11 +331,14 @@
       box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
     }
     .status-ultimate {
-  border: 4px solid;
-  border-image: linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff, #5f27cd, #ff6b6b) 1;
+  position: relative;
+  border: 4px solid transparent; /* прозрачная рамка */
+  border-radius: 25px; /* скругляем углы */
+  background: 
+    linear-gradient(135deg, rgba(30,30,30,0.6), rgba(30,30,30,0.4)) padding-box, /* фон карточки */
+    linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff, #5f27cd, #ff6b6b) border-box; /* радужная рамка */
   box-shadow: 0 0 40px rgba(255, 107, 107, 0.4);
   animation: rainbow-glow 3s ease-in-out infinite;
-  border-radius: 25px; /* 🔹 добавляем скругление */
 }
 
     @keyframes rainbow-glow {
