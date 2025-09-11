@@ -222,6 +222,17 @@
       box-shadow: 0 20px 50px rgba(255, 107, 107, 0.4);
     }
 
+    /* Ограничение ширины карточек — чтобы выглядеть как форма поддержки */
+    /* Не удалял/не менял ничего выше — просто добавил переопределяющие правила */
+    .big-card {
+      max-width: 700px; /* можно изменить на 600px или 800px по вкусу */
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
     /* ==== Улучшенная форма ==== */
     .form-container {
       background: rgba(255,255,255,0.08);
@@ -661,4 +672,3 @@ document.getElementById('supportForm').addEventListener('submit', function(e) {
   </script>
 </body>
 </html>
-
