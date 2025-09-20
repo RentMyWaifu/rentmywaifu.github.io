@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RentMyWaifu - Поддержка</title>
   <style>
     * { 
@@ -29,9 +29,9 @@
       width: 100%;
       height: 100%;
       background-image: 
-        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
       animation: float 20s ease-in-out infinite;
       pointer-events: none;
       z-index: -1;
@@ -51,50 +51,50 @@
     
     .header { 
       text-align: center; 
-      margin-bottom: 40px; 
+      margin-bottom: 24px; 
       position: relative;
     }
     
     .logo { 
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-size: clamp(2.2rem, 5vw, 3rem);
       font-weight: 900; 
       background: linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff); 
       -webkit-background-clip: text; 
       -webkit-text-fill-color: transparent; 
       background-clip: text;
       background-size: 400% 400%;
-      margin-bottom: 10px; 
+      margin-bottom: 6px; 
       animation: glow 3s ease-in-out infinite alternate, gradient 4s ease infinite;
-      letter-spacing: -2px;
+      letter-spacing: -1px;
     }
     
     .tagline { 
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      opacity: 0.9; 
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      opacity: 0.95; 
       font-weight: 300;
-      letter-spacing: 1px;
+      letter-spacing: 0.6px;
     }
     
     .nav { 
       display: flex; 
       justify-content: center; 
-      gap: 15px; 
-      margin-bottom: 40px; 
+      gap: 12px; 
+      margin: 20px 0 28px; 
       flex-wrap: wrap;
     }
     
     .nav-btn { 
-      padding: 14px 28px; 
-      background: rgba(255,255,255,0.1); 
-      border: 2px solid rgba(255,255,255,0.2); 
+      padding: 12px 22px; 
+      background: rgba(255,255,255,0.06); 
+      border: 2px solid rgba(255,255,255,0.12); 
       border-radius: 50px; 
       color: white; 
       text-decoration: none; 
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       cursor: pointer; 
       font-weight: 600;
       font-size: 0.95rem;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(8px);
       position: relative;
       overflow: hidden;
     }
@@ -103,33 +103,33 @@
       content: '';
       position: absolute;
       top: 0;
-      left: -100%;
+      left: -120%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
       transition: left 0.5s ease;
     }
 
     .nav-btn:hover::before {
-      left: 100%;
+      left: 120%;
     }
     
     .nav-btn:hover { 
-      background: rgba(255,255,255,0.2); 
-      transform: translateY(-3px) scale(1.05); 
-      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-      border-color: rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.12); 
+      transform: translateY(-3px) scale(1.03); 
+      box-shadow: 0 14px 30px rgba(0,0,0,0.28);
+      border-color: rgba(255,255,255,0.25);
     }
     
     .nav-btn.active { 
       background: linear-gradient(45deg, #ff6b6b, #feca57); 
       border-color: transparent;
-      box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+      box-shadow: 0 10px 28px rgba(255, 107, 107, 0.35);
     }
     
     .content-section { 
       display: none; 
-      animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+      animation: fadeInUp 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     .content-section.active { 
       display: block; 
@@ -137,17 +137,21 @@
 
     /* ==== Улучшенные карточки ==== */
     .big-card {
-      background: rgba(255,255,255,0.12);
-      border-radius: 25px;
-      padding: clamp(40px, 6vw, 60px) clamp(30px, 5vw, 50px);
-      margin-bottom: 30px;
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.10);
+      border-radius: 22px;
+      padding: clamp(28px, 5vw, 48px);
+      margin-bottom: 26px;
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.14);
       text-align: center;
-      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-      transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
       position: relative;
       overflow: hidden;
+      max-width: 900px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .big-card::before {
@@ -157,7 +161,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+      background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
       opacity: 0;
       transition: opacity 0.5s ease;
       pointer-events: none;
@@ -168,72 +172,238 @@
     }
     
     .big-card:hover { 
-      transform: translateY(-8px) scale(1.02); 
+      transform: translateY(-6px) scale(1.01); 
       box-shadow: 
-        0 25px 60px rgba(0,0,0,0.25),
-        0 0 0 1px rgba(255,255,255,0.3);
-      border-color: rgba(255,255,255,0.4);
+        0 22px 52px rgba(0,0,0,0.26),
+        0 0 0 1px rgba(255,255,255,0.18);
+      border-color: rgba(255,255,255,0.28);
     }
 
     .big-card .emoji {
-      font-size: clamp(3rem, 6vw, 4.5rem);
-      margin-bottom: 20px;
-      animation: bounce 2s ease infinite;
+      font-size: clamp(2.6rem, 6vw, 4rem);
+      margin-bottom: 14px;
+      animation: bounce 2.2s ease infinite;
     }
 
     @keyframes bounce {
       0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
       40% { transform: translateY(-10px); }
-      60% { transform: translateY(-5px); }
+      60% { transform: translateY(-6px); }
     }
     
     .big-card h3 {
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
-      font-weight: 800;
-      margin-bottom: 15px;
+      font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+      font-weight: 900;
+      margin-bottom: 12px;
       background: linear-gradient(45deg, #fff, #feca57);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      letter-spacing: -0.5px;
     }
     
     .big-card p {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      opacity: 0.9;
+      font-size: clamp(0.95rem, 1.9vw, 1.12rem);
+      opacity: 0.92;
       line-height: 1.6;
     }
     
     .big-card a {
       display: inline-block;
-      margin-top: 25px;
-      padding: 16px 36px;
+      margin-top: 18px;
+      padding: 14px 34px;
       border-radius: 50px;
       background: linear-gradient(45deg, #ff6b6b, #feca57);
       color: white;
-      font-weight: 700;
+      font-weight: 800;
       text-decoration: none;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      font-size: 1.1rem;
-      box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+      transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      font-size: 1rem;
+      box-shadow: 0 8px 25px rgba(255, 107, 107, 0.28);
     }
     
     .big-card a:hover { 
-      transform: translateY(-3px) scale(1.05); 
-      box-shadow: 0 20px 50px rgba(255, 107, 107, 0.4);
+      transform: translateY(-3px) scale(1.03); 
+      box-shadow: 0 18px 44px rgba(255, 107, 107, 0.36);
+    }
+
+    /* ==== Лутерея (новый раздел) ==== */
+    .lottery-card {
+      position: relative;
+      overflow: visible;
+      padding: clamp(28px, 4.5vw, 48px);
+      border-radius: 26px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)),
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,0.02), transparent 20%);
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 30px 70px rgba(70,20,120,0.18);
+    }
+
+    .lottery-header {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      flex-direction:column;
+      margin-bottom: 14px;
+    }
+
+    .lottery-ribbon {
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border-radius:999px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.05), rgba(254,202,87,0.06));
+      border: 1px solid rgba(255,255,255,0.06);
+      font-weight:800;
+      letter-spacing:0.6px;
+      box-shadow: 0 8px 30px rgba(95,39,205,0.09) inset;
+    }
+
+    .lottery-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 900;
+      margin-top: 4px;
+      letter-spacing: -1px;
+      background: linear-gradient(45deg,#fff,#ff9ff3,#feca57);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .ticket-visual {
+      display:flex;
+      gap:14px;
+      align-items:center;
+      justify-content:center;
+      margin: 18px 0;
+      flex-wrap:wrap;
+    }
+
+    .ticket {
+      width: 260px;
+      max-width: 90%;
+      border-radius: 16px;
+      padding: 16px 18px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.14), rgba(255,255,255,0.02));
+      border: 1px dashed rgba(255,255,255,0.12);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+      text-align:left;
+    }
+
+    .ticket .row {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:8px;
+    }
+
+    .ticket .code {
+      font-weight:800;
+      font-size:1.0rem;
+      letter-spacing:1px;
+    }
+
+    .ticket .small {
+      font-size:0.85rem;
+      opacity:0.85;
+    }
+
+    .prizes {
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      margin-top:12px;
+      flex-wrap:wrap;
+    }
+
+    .prize {
+      min-width:170px;
+      border-radius:14px;
+      padding:14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+    }
+
+    .prize h4 {
+      margin-bottom:6px;
+      font-size:1.05rem;
+    }
+
+    .prize p { font-size:0.95rem; opacity:0.95; }
+
+    .rules {
+      text-align:left;
+      margin-top:16px;
+      line-height:1.6;
+      font-size:0.98rem;
+      padding: 12px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.04);
+    }
+
+    .rules ul { margin-left: 18px; }
+
+    .lottery-cta {
+      margin-top:18px;
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .cta-check, .cta-join {
+      padding:12px 28px;
+      border-radius:999px;
+      font-weight:800;
+      border: none;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .cta-join {
+      background: linear-gradient(90deg,#ff6b6b,#feca57);
+      color: white;
+      box-shadow: 0 12px 34px rgba(255,107,107,0.24);
+    }
+
+    .cta-check {
+      background: rgba(255,255,255,0.06);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding:10px 18px;
+    }
+
+    /* Конфетти */
+    .confetti {
+      position:absolute;
+      left:0; right:0; top:0; bottom:0;
+      pointer-events:none;
+      overflow:visible;
+      z-index:5;
+    }
+    .confetti span {
+      position:absolute;
+      width:10px;
+      height:14px;
+      opacity:0.95;
+      transform-origin:center;
+      animation: confetti-fall linear forwards;
+      border-radius:2px;
+    }
+    @keyframes confetti-fall {
+      0% { transform: translateY(-40px) rotate(0deg) scale(1); opacity:1; }
+      100% { transform: translateY(140vh) rotate(720deg) scale(0.9); opacity:0.9; }
     }
 
     /* Ограничение ширины карточек — чтобы выглядеть как форма поддержки */
-    /* Не удалял/не менял ничего выше — просто добавил переопределяющие правила */
-    .big-card {
-      max-width: 700px; /* можно изменить на 600px или 800px по вкусу */
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-
-    /* ==== Улучшенная форма ==== */
     .form-container {
       background: rgba(255,255,255,0.08);
       border-radius: 20px;
@@ -265,17 +435,12 @@
       outline: none;
       border-color: #feca57;
       background: rgba(255,255,255,0.15);
-      box-shadow: 0 0 0 3px rgba(254, 202, 87, 0.2);
+      box-shadow: 0 0 0 3px rgba(254, 202, 87, 0.14);
       transform: translateY(-2px);
     }
 
     .form-select {
       cursor: pointer;
-    }
-
-    .form-select option {
-      background: #764ba2;
-      color: white;
     }
 
     .form-textarea {
@@ -301,14 +466,14 @@
       font-size: 1.2rem;
       font-weight: 700;
       cursor: pointer;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       margin-top: 10px;
       box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
     }
 
     .submit-btn:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+      box-shadow: 0 15px 40px rgba(255, 107, 107, 0.36);
     }
 
     .submit-btn:disabled {
@@ -331,15 +496,15 @@
       box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
     }
     .status-ultimate {
-  position: relative;
-  border: 4px solid transparent; /* прозрачная рамка */
-  border-radius: 25px; /* скругляем углы */
-  background: 
-    linear-gradient(135deg, rgba(30,30,30,0.6), rgba(30,30,30,0.4)) padding-box, /* фон карточки */
-    linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff, #5f27cd, #ff6b6b) border-box; /* радужная рамка */
-  box-shadow: 0 0 40px rgba(255, 107, 107, 0.4);
-  animation: rainbow-glow 3s ease-in-out infinite;
-}
+      position: relative;
+      border: 4px solid transparent;
+      border-radius: 25px;
+      background: 
+        linear-gradient(135deg, rgba(30,30,30,0.6), rgba(30,30,30,0.4)) padding-box,
+        linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff, #5f27cd, #ff6b6b) border-box;
+      box-shadow: 0 0 40px rgba(255, 107, 107, 0.4);
+      animation: rainbow-glow 3s ease-in-out infinite;
+    }
 
     @keyframes rainbow-glow {
       0%, 100% { box-shadow: 0 0 40px rgba(255, 107, 107, 0.4); }
@@ -350,8 +515,8 @@
 
     /* ==== Анимации ==== */
     @keyframes glow {
-      from { text-shadow: 0 0 15px rgba(255, 107, 107, 0.5); }
-      to { text-shadow: 0 0 25px rgba(254, 202, 87, 0.8), 0 0 35px rgba(255, 159, 243, 0.3); }
+      from { text-shadow: 0 0 12px rgba(255, 107, 107, 0.45); }
+      to { text-shadow: 0 0 22px rgba(254, 202, 87, 0.8), 0 0 32px rgba(255, 159, 243, 0.34); }
     }
 
     @keyframes gradient {
@@ -361,7 +526,7 @@
     }
     
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
+      from { opacity: 0; transform: translateY(32px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
@@ -376,12 +541,12 @@
       }
 
       .nav-btn {
-        padding: 12px 20px;
+        padding: 10px 16px;
         font-size: 0.9rem;
       }
 
       .big-card {
-        margin-bottom: 25px;
+        margin-bottom: 22px;
       }
 
       .form-row {
@@ -390,7 +555,7 @@
       }
 
       .form-container {
-        padding: 25px 20px;
+        padding: 22px 18px;
       }
 
       .logo {
@@ -401,13 +566,14 @@
       body::before { display: none !important; } /* убираем фоновые частицы */
       .sparkle::after { display: none !important; } /* убираем ✨ */
       .big-card, .form-container, .form-input, .form-textarea, .form-select {
-        backdrop-filter: none !important; /* убираем blur */
+        backdrop-filter: none !important;
         background: rgba(255,255,255,0.06) !important;
         border-color: rgba(255,255,255,0.12) !important;
       }
-      .big-card:hover { transform: none !important; box-shadow: none !important; } /* убираем hover анимацию */
+      .big-card:hover { transform: none !important; box-shadow: none !important; }
       .submit-btn { transform: none !important; box-shadow: 0 6px 15px rgba(0,0,0,0.12) !important; }
-      .big-card .emoji { animation: none !important; } /* статичные эмодзи */
+      .big-card .emoji { animation: none !important; }
+      .ticket { width: 100%; }
     }
 
     @media (max-width: 480px) {
@@ -420,22 +586,22 @@
       }
 
       .nav-btn {
-        padding: 10px 16px;
-        font-size: 0.85rem;
+        padding: 8px 12px;
+        font-size: 0.82rem;
       }
 
       .form-container {
-        padding: 20px 15px;
+        padding: 18px 12px;
       }
 
       .form-input, .form-textarea, .form-select {
-        padding: 15px 18px;
+        padding: 14px 16px;
         font-size: 0.95rem;
       }
 
       .submit-btn {
-        padding: 18px;
-        font-size: 1.1rem;
+        padding: 16px;
+        font-size: 1.05rem;
       }
     }
 
@@ -485,11 +651,12 @@
     </div>
 
     <nav class="nav">
-      <a href="#" class="nav-btn active" onclick="showSection('support')">Поддержка</a>
-      <a href="#" class="nav-btn" onclick="showSection('faq')">FAQ</a>
-      <a href="#" class="nav-btn" onclick="showSection('guarantors')">Площадки</a>
-      <a href="#" class="nav-btn" onclick="showSection('features')">Превосходство</a>
-      <a href="#" class="nav-btn" onclick="showSection('accounts')">Статусы</a>
+      <a href="#" class="nav-btn active" onclick="showSection('support', event)">Поддержка</a>
+      <a href="#" class="nav-btn" onclick="showSection('faq', event)">FAQ</a>
+      <a href="#" class="nav-btn" onclick="showSection('guarantors', event)">Площадки</a>
+      <a href="#" class="nav-btn" onclick="showSection('features', event)">Превосходство</a>
+      <a href="#" class="nav-btn" onclick="showSection('lottery', event)">Лутерея</a>
+      <a href="#" class="nav-btn" onclick="showSection('accounts', event)">Статусы</a>
     </nav>
 
     <!-- Поддержка -->
@@ -548,13 +715,13 @@
         <div class="emoji">🏆</div>
         <h3>FunPay (рекомендовано)</h3>
         <p>Основная площадка для сделок. Надежная, быстрая и проверенная временем.</p>
-        <a href="https://funpay.com/users/16448769/" target="_blank">🎮 Перейти на FunPay</a>
+        <a href="https://funpay.com/users/16448769/" target="_blank" rel="noopener">🎮 Перейти на FunPay</a>
       </div>
       <div class="big-card">
         <div class="emoji">⏰</div>
         <h3>Playerok (альтернатива)</h3>
         <p>Дополнительная площадка. Время обработки заказов может быть немного больше.</p>
-        <a href="https://playerok.com/profile/RentMyWaifu/products" target="_blank">🎯 Перейти на Playerok</a>
+        <a href="https://playerok.com/profile/RentMyWaifu/products" target="_blank" rel="noopener">🎯 Перейти на Playerok</a>
       </div>
     </div>
 
@@ -587,6 +754,70 @@
       </div>
     </div>
 
+    <!-- Лутерея (новый раздел) -->
+    <div id="lottery" class="content-section">
+      <div class="big-card lottery-card">
+        <div class="confetti" id="confettiArea" aria-hidden="true"></div>
+
+        <div class="lottery-header">
+          <div class="lottery-ribbon">🎟️ Эксклюзив — Лутерея</div>
+          <div class="lottery-title">🎉 Лутерея Robux от RentMyWaifu 🎉</div>
+          <div style="font-size:0.95rem;opacity:0.9;">Участвуйте автоматически — выигрывайте Robux!</div>
+        </div>
+
+        <div class="ticket-visual" aria-hidden="false">
+          <div class="ticket">
+            <div class="row"><div class="code">Как участвовать:</div></div>
+            <div class="row"><div class="small">1.</div><div class="small">Каждые <strong>10₽</strong> потраченные на аренду аккаунтов или скинов дают вам <strong>1 билет</strong>.</div></div>
+            <div class="row"><div class="small">2.</div><div class="small">Все билеты автоматически добавляются в общий “барабан” для лутереи.</div></div>
+            <div class="row"><div class="small">3.</div><div class="small">Победители определяются случайным выбором и объявляются на сайте/в сообществе.</div></div>
+          </div>
+
+          <div class="ticket" aria-hidden="true">
+            <div class="row"><div class="code">Призы:</div></div>
+            <div class="row"><div class="small">🏆 1 место:</div><div class="small"><strong>100 Robux</strong></div></div>
+            <div class="row"><div class="small">🥈 2 место:</div><div class="small"><strong>50 Robux</strong></div></div>
+            <div class="row"><div class="small">🥉 3 место:</div><div class="small"><strong>25 Robux</strong></div></div>
+          </div>
+        </div>
+
+        <div class="prizes" role="list">
+          <div class="prize" role="listitem">
+            <h4>1 место — 100 Robux</h4>
+            <p>Большой приз для счастливчика — зачислим сразу после подтверждения аккаунта.</p>
+          </div>
+          <div class="prize" role="listitem">
+            <h4>2 место — 50 Robux</h4>
+            <p>Второй приз — приятный подарок к вашим покупкам.</p>
+          </div>
+          <div class="prize" role="listitem">
+            <h4>3 место — 25 Robux</h4>
+            <p>Третий приз — бонус, который поднимет настроение.</p>
+          </div>
+        </div>
+
+        <div class="rules" aria-label="Правила лутереи">
+          <strong>Правила и условия:</strong>
+          <ul>
+            <li>Лутерея действует с <strong>20 сентября по 13 ноября</strong>.</li>
+            <li>Чем больше билетов — тем выше шанс на победу.</li>
+            <li>Билеты начисляются только за реальные покупки на сайте.</li>
+            <li>Победители определяются случайным выбором (рандомно) и будут объявлены на сайте/в нашем сообществе.</li>
+            <li>Призы выдаются только участникам лутереи.</li>
+            <li>Участие в лутерее автоматически означает согласие с правилами.</li>
+            <li>Лутерея не является азартной игрой и проводится честно — все билеты участвуют одинаково.</li>
+          </ul>
+          <div style="margin-top:8px; font-weight:700;">💡 Совет: чаще покупайте — увеличивайте свои шансы на победу!</div>
+        </div>
+
+        <div class="lottery-cta">
+          <a class="cta-join" href="#support" onclick="scrollToSupport(event)">🎟️ Проверить билеты</a>
+          <a class="cta-check" href="https://rentmywaifu.ddns.net/orders" target="_blank" rel="noopener">📦 История покупок</a>
+        </div>
+
+      </div>
+    </div>
+
     <!-- Статусы -->
     <div id="accounts" class="content-section">
       <div class="big-card status-bronze">
@@ -613,64 +844,112 @@
   </div>
 
   <script>
-    function showSection(sectionId) {
+    // Навигация между разделами
+    function showSection(sectionId, ev) {
       const sections = document.querySelectorAll('.content-section');
       sections.forEach(section => section.classList.remove('active'));
-      document.getElementById(sectionId).classList.add('active');
+      const target = document.getElementById(sectionId);
+      if (target) target.classList.add('active');
       const buttons = document.querySelectorAll('.nav-btn');
       buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
+      try {
+        if (ev && ev.currentTarget) ev.currentTarget.classList.add('active');
+        else if (event && event.target) event.target.classList.add('active');
+      } catch(e) {}
+      // если открыт лутерея — запуск конфетти
+      if (sectionId === 'lottery') startConfetti();
     }
 
+    // Кнопка проверки билетов — пример прокрутки к форме поддержки
+    function scrollToSupport(e) {
+      e.preventDefault();
+      showSection('support', e);
+      const form = document.getElementById('supportForm');
+      if (form) {
+        form.scrollIntoView({behavior: 'smooth', block: 'center'});
+      }
+    }
+
+    // Обработка формы (как было)
     let formAlreadySubmitted = false;
+    document.getElementById('supportForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const submitBtn = form.querySelector('.submit-btn span');
+      const originalText = submitBtn.innerHTML;
 
-document.getElementById('supportForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const form = e.target;
-  const submitBtn = form.querySelector('.submit-btn span');
-  const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '⏳ Отправляется...';
+      form.querySelector('.submit-btn').disabled = true;
 
-  submitBtn.innerHTML = '⏳ Отправляется...';
-  form.querySelector('.submit-btn').disabled = true;
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form)
+      }).then(response => {
+        if (response.ok) {
+          submitBtn.innerHTML = '✅ Отправлено!';
+          setTimeout(() => alert('🎉 Спасибо! Ваш запрос отправлен!'), 500);
+          form.reset();
+        } else {
+          throw new Error('Ошибка при отправке через fetch');
+        }
+      }).catch(error => {
+        // Не делаем form.submit()! Просто показываем сообщение
+        submitBtn.innerHTML = '✅ Отправлено!';
+        setTimeout(() => {
+          alert('🎉 Спасибо! Ваш запрос отправлен! Ожидайте ответ по указанной почте через 30 - 120 минут');
+        }, 500);
+        console.error(error);
+      }).finally(() => {
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          form.querySelector('.submit-btn').disabled = false;
+        }, 2000);
+      });
+    });
 
-  fetch(form.action, {
-    method: 'POST',
-    body: new FormData(form)
-  }).then(response => {
-    if (response.ok) {
-      submitBtn.innerHTML = '✅ Отправлено!';
-      setTimeout(() => alert('🎉 Спасибо! Ваш запрос отправлен!'), 500);
-      form.reset();
-    } else {
-      throw new Error('Ошибка при отправке через fetch');
+    // Конфетти: простой генератор. Запускается при открытии раздела "lottery".
+    function startConfetti() {
+      const area = document.getElementById('confettiArea');
+      if (!area) return;
+      area.innerHTML = ''; // перезапуск
+      const colors = ['#FF6B6B','#FEC857','#FF9FF3','#54A0FF','#6EE7B7','#FFD700'];
+      const count = Math.min(Math.max(Math.floor(window.innerWidth/12), 18), 120);
+      for (let i=0;i<count;i++){
+        const el = document.createElement('span');
+        const size = Math.random() * 10 + 6;
+        el.style.width = size + 'px';
+        el.style.height = (size * 1.2) + 'px';
+        el.style.left = Math.random() * 100 + '%';
+        el.style.top = (Math.random() * 10 - 10) + 'vh';
+        el.style.background = colors[Math.floor(Math.random()*colors.length)];
+        el.style.transform = 'rotate(' + (Math.random()*360) + 'deg)';
+        el.style.opacity = 0.95;
+        el.style.animationDuration = (Math.random()*2 + 3.2) + 's';
+        el.style.animationDelay = (Math.random()*0.6) + 's';
+        area.appendChild(el);
+        // авто-удаление
+        (function(node){
+          setTimeout(()=>{ try{ node.remove() }catch(e){} }, 7000);
+        })(el);
+      }
     }
-  }).catch(error => {
-    // Не делаем form.submit()! Просто показываем сообщение
-    submitBtn.innerHTML = '✅ Отправлено!';
-    setTimeout(() => {
-      alert('🎉 Спасибо! Ваш запрос отправлен! Ожидайте ответ по указанной почте через 30 - 120 минут');
-    }, 500);
-    console.error(error);
-  }).finally(() => {
-    setTimeout(() => {
-      submitBtn.innerHTML = originalText;
-      form.querySelector('.submit-btn').disabled = false;
-    }, 2000);
-  });
-});
 
-    // Добавляем плавные переходы при прокрутке
+    // Авто-инициализация: если страница открыла лутерею через хеш
     document.addEventListener('DOMContentLoaded', function() {
+      if (location.hash && document.getElementById(location.hash.replace('#',''))) {
+        const id = location.hash.replace('#','');
+        showSection(id, {});
+      }
+      // Наблюдатель для карточек (плавные появления)
       const cards = document.querySelectorAll('.big-card');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.style.animationDelay = Math.random() * 0.3 + 's';
+            entry.target.style.animationDelay = (Math.random() * 0.25) + 's';
             entry.target.classList.add('animate');
           }
         });
-      }, { threshold: 0.1 });
-
+      }, { threshold: 0.12 });
       cards.forEach(card => observer.observe(card));
     });
   </script>
