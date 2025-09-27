@@ -18,9 +18,10 @@
       color: white; 
       overflow-x: hidden;
       position: relative;
+      line-height: 1.6;
     }
 
-    /* Анимированные частицы на фоне */
+    /* Улучшенные анимированные частицы на фоне */
     body::before {
       content: '';
       position: fixed;
@@ -29,74 +30,78 @@
       width: 100%;
       height: 100%;
       background-image: 
-        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.06) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
-      animation: float 20s ease-in-out infinite;
+        radial-gradient(circle at 25% 75%, rgba(255, 255, 255, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 75% 25%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 10% 90%, rgba(254, 202, 87, 0.06) 0%, transparent 35%);
+      animation: float 25s ease-in-out infinite;
       pointer-events: none;
       z-index: -1;
     }
 
     @keyframes float {
-      0%, 100% { transform: translate(0px, 0px); }
-      33% { transform: translate(-10px, -20px); }
-      66% { transform: translate(10px, 20px); }
+      0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+      25% { transform: translate(-15px, -25px) rotate(2deg); }
+      50% { transform: translate(10px, -15px) rotate(-1deg); }
+      75% { transform: translate(15px, 25px) rotate(1deg); }
     }
     
     .container { 
-      max-width: 1200px; 
+      max-width: 1400px; 
       margin: 0 auto; 
-      padding: 20px;
+      padding: 25px;
     }
     
     .header { 
       text-align: center; 
-      margin-bottom: 24px; 
+      margin-bottom: 35px; 
       position: relative;
     }
     
     .logo { 
-      font-size: clamp(2.2rem, 5vw, 3rem);
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
       font-weight: 900; 
-      background: linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff); 
+      background: linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff, #5f27cd); 
       -webkit-background-clip: text; 
       -webkit-text-fill-color: transparent; 
       background-clip: text;
       background-size: 400% 400%;
-      margin-bottom: 6px; 
-      animation: glow 3s ease-in-out infinite alternate, gradient 4s ease infinite;
-      letter-spacing: -1px;
+      margin-bottom: 8px; 
+      animation: glow 3s ease-in-out infinite alternate, gradient 6s ease infinite;
+      letter-spacing: -1.5px;
+      text-shadow: 0 0 30px rgba(255, 107, 107, 0.3);
     }
     
     .tagline { 
-      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      font-size: clamp(1rem, 2.8vw, 1.3rem);
       opacity: 0.95; 
-      font-weight: 300;
-      letter-spacing: 0.6px;
+      font-weight: 400;
+      letter-spacing: 0.8px;
     }
     
     .nav { 
       display: flex; 
       justify-content: center; 
-      gap: 12px; 
-      margin: 20px 0 28px; 
+      gap: 15px; 
+      margin: 30px 0 40px; 
       flex-wrap: wrap;
     }
     
     .nav-btn { 
-      padding: 12px 22px; 
-      background: rgba(255,255,255,0.06); 
-      border: 2px solid rgba(255,255,255,0.12); 
+      padding: 15px 28px; 
+      background: rgba(255,255,255,0.08); 
+      border: 2px solid rgba(255,255,255,0.15); 
       border-radius: 50px; 
       color: white; 
       text-decoration: none; 
-      transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       cursor: pointer; 
-      font-weight: 600;
-      font-size: 0.95rem;
-      backdrop-filter: blur(8px);
+      font-weight: 700;
+      font-size: 1rem;
+      backdrop-filter: blur(12px);
       position: relative;
       overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
     }
 
     .nav-btn::before {
@@ -106,8 +111,8 @@
       left: -120%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-      transition: left 0.5s ease;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.6s ease;
     }
 
     .nav-btn:hover::before {
@@ -115,21 +120,21 @@
     }
     
     .nav-btn:hover { 
-      background: rgba(255,255,255,0.12); 
-      transform: translateY(-3px) scale(1.03); 
-      box-shadow: 0 14px 30px rgba(0,0,0,0.28);
-      border-color: rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.15); 
+      transform: translateY(-4px) scale(1.05); 
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      border-color: rgba(255,255,255,0.3);
     }
     
     .nav-btn.active { 
       background: linear-gradient(45deg, #ff6b6b, #feca57); 
       border-color: transparent;
-      box-shadow: 0 10px 28px rgba(255, 107, 107, 0.35);
+      box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
     }
     
     .content-section { 
       display: none; 
-      animation: fadeInUp 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+      animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     .content-section.active { 
       display: block; 
@@ -137,21 +142,22 @@
 
     /* ==== Улучшенные карточки ==== */
     .big-card {
-      background: rgba(255,255,255,0.10);
-      border-radius: 22px;
-      padding: clamp(28px, 5vw, 48px);
-      margin-bottom: 26px;
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.12);
+      border-radius: 25px;
+      padding: clamp(30px, 5.5vw, 55px);
+      margin-bottom: 30px;
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(255,255,255,0.18);
       text-align: center;
-      font-size: clamp(1rem, 2.2vw, 1.25rem);
-      transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+      font-size: clamp(1.05rem, 2.3vw, 1.3rem);
+      transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
       position: relative;
       overflow: hidden;
-      max-width: 900px;
+      max-width: 1000px;
       width: 100%;
       margin-left: auto;
       margin-right: auto;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
     }
 
     .big-card::before {
@@ -161,9 +167,9 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
       opacity: 0;
-      transition: opacity 0.5s ease;
+      transition: opacity 0.6s ease;
       pointer-events: none;
     }
 
@@ -172,351 +178,292 @@
     }
     
     .big-card:hover { 
-      transform: translateY(-6px) scale(1.01); 
+      transform: translateY(-8px) scale(1.02); 
       box-shadow: 
-        0 22px 52px rgba(0,0,0,0.26),
-        0 0 0 1px rgba(255,255,255,0.18);
-      border-color: rgba(255,255,255,0.28);
+        0 30px 70px rgba(0,0,0,0.3),
+        0 0 0 2px rgba(255,255,255,0.25);
+      border-color: rgba(255,255,255,0.35);
     }
 
     .big-card .emoji {
-      font-size: clamp(2.6rem, 6vw, 4rem);
-      margin-bottom: 14px;
-      animation: bounce 2.2s ease infinite;
+      font-size: clamp(2.8rem, 6.5vw, 4.5rem);
+      margin-bottom: 18px;
+      animation: bounce 2.5s ease infinite;
     }
 
     @keyframes bounce {
       0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-10px); }
-      60% { transform: translateY(-6px); }
+      40% { transform: translateY(-12px); }
+      60% { transform: translateY(-8px); }
     }
     
     .big-card h3 {
-      font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+      font-size: clamp(1.4rem, 2.8vw, 2.2rem);
       font-weight: 900;
-      margin-bottom: 12px;
+      margin-bottom: 15px;
       background: linear-gradient(45deg, #fff, #feca57);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.8px;
     }
     
     .big-card p {
-      font-size: clamp(0.95rem, 1.9vw, 1.12rem);
-      opacity: 0.92;
-      line-height: 1.6;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      opacity: 0.95;
+      line-height: 1.7;
     }
     
     .big-card a {
       display: inline-block;
-      margin-top: 18px;
-      padding: 14px 34px;
+      margin-top: 22px;
+      padding: 16px 40px;
       border-radius: 50px;
       background: linear-gradient(45deg, #ff6b6b, #feca57);
       color: white;
       font-weight: 800;
       text-decoration: none;
-      transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      font-size: 1rem;
-      box-shadow: 0 8px 25px rgba(255, 107, 107, 0.28);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      font-size: 1.1rem;
+      box-shadow: 0 12px 30px rgba(255, 107, 107, 0.35);
     }
     
     .big-card a:hover { 
-      transform: translateY(-3px) scale(1.03); 
-      box-shadow: 0 18px 44px rgba(255, 107, 107, 0.36);
+      transform: translateY(-4px) scale(1.05); 
+      box-shadow: 0 25px 55px rgba(255, 107, 107, 0.45);
     }
 
-    /* ==== Лутерея (новый раздел) ==== */
-    .lottery-card {
-      position: relative;
-      overflow: visible;
-      padding: clamp(28px, 4.5vw, 48px);
-      border-radius: 26px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)),
-        radial-gradient(circle at 10% 10%, rgba(255,255,255,0.02), transparent 20%);
-      border: 1px solid rgba(255,255,255,0.18);
-      box-shadow: 0 30px 70px rgba(70,20,120,0.18);
+    /* ==== FAQ стили ==== */
+    .faq-content {
+      text-align: left;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    .lottery-header {
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:12px;
-      flex-direction:column;
-      margin-bottom: 14px;
+    .faq-section {
+      margin-bottom: 35px;
     }
 
-    .lottery-ribbon {
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:8px 14px;
-      border-radius:999px;
-      background: linear-gradient(90deg, rgba(255,255,255,0.05), rgba(254,202,87,0.06));
-      border: 1px solid rgba(255,255,255,0.06);
-      font-weight:800;
-      letter-spacing:0.6px;
-      box-shadow: 0 8px 30px rgba(95,39,205,0.09) inset;
-    }
-
-    .lottery-title {
-      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    .faq-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
       font-weight: 900;
-      margin-top: 4px;
-      letter-spacing: -1px;
-      background: linear-gradient(45deg,#fff,#ff9ff3,#feca57);
+      margin-bottom: 25px;
+      background: linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-align: center;
+      letter-spacing: -1px;
     }
 
-    .ticket-visual {
-      display:flex;
-      gap:14px;
-      align-items:center;
-      justify-content:center;
-      margin: 18px 0;
-      flex-wrap:wrap;
+    .faq-category {
+      background: rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 25px;
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: all 0.3s ease;
     }
 
-    .ticket {
-      width: 260px;
-      max-width: 90%;
-      border-radius: 16px;
-      padding: 16px 18px;
-      background: linear-gradient(180deg, rgba(0,0,0,0.14), rgba(255,255,255,0.02));
-      border: 1px dashed rgba(255,255,255,0.12);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
-      text-align:left;
+    .faq-category:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     }
 
-    .ticket .row {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:8px;
+    .faq-category h2 {
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 800;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .ticket .code {
-      font-weight:800;
-      font-size:1.0rem;
-      letter-spacing:1px;
+    .faq-item {
+      margin-bottom: 15px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
-    .ticket .small {
-      font-size:0.85rem;
-      opacity:0.85;
+    .faq-item:last-child {
+      border-bottom: none;
     }
 
-    .prizes {
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      margin-top:12px;
-      flex-wrap:wrap;
+    .faq-question {
+      font-weight: 700;
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      margin-bottom: 8px;
+      color: #feca57;
     }
 
-    .prize {
-      min-width:170px;
-      border-radius:14px;
-      padding:14px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+    .faq-answer {
+      font-size: clamp(0.95rem, 1.7vw, 1.1rem);
+      opacity: 0.92;
+      line-height: 1.6;
     }
 
-    .prize h4 {
-      margin-bottom:6px;
-      font-size:1.05rem;
+    .faq-highlight {
+      background: linear-gradient(45deg, #ff6b6b, #feca57);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+      font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+      text-align: center;
+      margin-top: 25px;
+      padding: 15px;
+      border-radius: 15px;
+      background-color: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
-    .prize p { font-size:0.95rem; opacity:0.95; }
-
-    .rules {
-      text-align:left;
-      margin-top:16px;
-      line-height:1.6;
-      font-size:0.98rem;
-      padding: 12px;
-      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,0.04);
+    /* ==== Правила стили ==== */
+    .rules-content {
+      text-align: left;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
-    .rules ul { margin-left: 18px; }
-
-    .lottery-cta {
-      margin-top:18px;
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      align-items:center;
-      flex-wrap:wrap;
+    .rules-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
+      margin-bottom: 25px;
+      background: linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-align: center;
+      letter-spacing: -1px;
     }
 
-    .cta-check, .cta-join {
-      padding:12px 28px;
-      border-radius:999px;
-      font-weight:800;
-      border: none;
-      cursor:pointer;
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-    }
-
-    .cta-join {
-      background: linear-gradient(90deg,#ff6b6b,#feca57);
-      color: white;
-      box-shadow: 0 12px 34px rgba(255,107,107,0.24);
-    }
-
-    .cta-check {
-      background: rgba(255,255,255,0.06);
-      color: white;
-      border: 1px solid rgba(255,255,255,0.08);
-      padding:10px 18px;
-    }
-
-    /* Конфетти */
-    .confetti {
-      position:absolute;
-      left:0; right:0; top:0; bottom:0;
-      pointer-events:none;
-      overflow:visible;
-      z-index:5;
-    }
-    .confetti span {
-      position:absolute;
-      width:10px;
-      height:14px;
-      opacity:0.95;
-      transform-origin:center;
-      animation: confetti-fall linear forwards;
-      border-radius:2px;
-    }
-    @keyframes confetti-fall {
-      0% { transform: translateY(-40px) rotate(0deg) scale(1); opacity:1; }
-      100% { transform: translateY(140vh) rotate(720deg) scale(0.9); opacity:0.9; }
-    }
-
-    /* Ограничение ширины карточек — чтобы выглядеть как форма поддержки */
-    .form-container {
+    .rule-section {
       background: rgba(255,255,255,0.08);
       border-radius: 20px;
       padding: 30px;
-      margin-top: 30px;
+      margin-bottom: 25px;
       backdrop-filter: blur(15px);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .form-input, .form-textarea, .form-select {
-      width: 100%;
-      padding: 18px 24px;
-      margin-bottom: 20px;
-      border: 2px solid rgba(255,255,255,0.2);
-      border-radius: 15px;
-      background: rgba(255,255,255,0.1);
-      color: white;
-      font-size: 1rem;
-      font-weight: 500;
+      border: 1px solid rgba(255,255,255,0.15);
       transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
     }
 
-    .form-input::placeholder, .form-textarea::placeholder {
-      color: rgba(255,255,255,0.7);
-    }
-
-    .form-input:focus, .form-textarea:focus, .form-select:focus {
-      outline: none;
-      border-color: #feca57;
-      background: rgba(255,255,255,0.15);
-      box-shadow: 0 0 0 3px rgba(254, 202, 87, 0.14);
+    .rule-section:hover {
+      background: rgba(255,255,255,0.12);
       transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     }
 
-    .form-select {
-      cursor: pointer;
-    }
-
-    .form-textarea {
-      min-height: 120px;
-      resize: vertical;
-      font-family: inherit;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .rule-header {
+      display: flex;
+      align-items: center;
       gap: 15px;
-      margin-bottom: 0;
+      margin-bottom: 20px;
     }
 
-    .submit-btn {
-      width: 100%;
-      padding: 20px;
-      border: none;
-      border-radius: 15px;
-      background: linear-gradient(45deg, #ff6b6b, #feca57);
-      color: white;
-      font-size: 1.2rem;
+    .rule-emoji {
+      font-size: 2.5rem;
+    }
+
+    .rule-title {
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 800;
+      background: linear-gradient(45deg, #fff, #feca57);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .rule-subsection {
+      margin-bottom: 20px;
+    }
+
+    .rule-subtitle {
       font-weight: 700;
-      cursor: pointer;
-      transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      margin-top: 10px;
-      box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+      font-size: clamp(1.05rem, 1.9vw, 1.25rem);
+      margin-bottom: 10px;
+      color: #ff9ff3;
     }
 
-    .submit-btn:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 15px 40px rgba(255, 107, 107, 0.36);
+    .rule-list {
+      list-style: none;
+      padding-left: 0;
     }
 
-    .submit-btn:disabled {
-      opacity: 0.7;
-      cursor: not-allowed;
-      transform: none;
+    .rule-list li {
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+      font-size: clamp(0.95rem, 1.7vw, 1.1rem);
+      line-height: 1.6;
+    }
+
+    .rule-list li:before {
+      content: "•";
+      color: #feca57;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .rule-nested {
+      margin-left: 20px;
+      margin-top: 5px;
+    }
+
+    .rule-penalty {
+      background: rgba(255, 107, 107, 0.15);
+      padding: 10px 15px;
+      border-radius: 10px;
+      margin: 10px 0;
+      border-left: 4px solid #ff6b6b;
+      font-weight: 600;
+    }
+
+    .rule-tip {
+      background: rgba(254, 202, 87, 0.15);
+      padding: 15px;
+      border-radius: 10px;
+      margin: 15px 0;
+      border-left: 4px solid #feca57;
+      font-style: italic;
     }
 
     /* ==== Статусы с улучшенными рамками ==== */
     .status-bronze { 
       border: 3px solid #cd7f32; 
-      box-shadow: 0 0 30px rgba(205, 127, 50, 0.3);
+      box-shadow: 0 0 40px rgba(205, 127, 50, 0.4);
     }
     .status-silver { 
       border: 3px solid #c0c0c0; 
-      box-shadow: 0 0 30px rgba(192, 192, 192, 0.3);
+      box-shadow: 0 0 40px rgba(192, 192, 192, 0.4);
     }
     .status-gold { 
       border: 3px solid #ffd700; 
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+      box-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
     }
     .status-ultimate {
       position: relative;
       border: 4px solid transparent;
-      border-radius: 25px;
+      border-radius: 28px;
       background: 
         linear-gradient(135deg, rgba(30,30,30,0.6), rgba(30,30,30,0.4)) padding-box,
         linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff, #5f27cd, #ff6b6b) border-box;
-      box-shadow: 0 0 40px rgba(255, 107, 107, 0.4);
-      animation: rainbow-glow 3s ease-in-out infinite;
+      box-shadow: 0 0 50px rgba(255, 107, 107, 0.5);
+      animation: rainbow-glow 4s ease-in-out infinite;
     }
 
     @keyframes rainbow-glow {
-      0%, 100% { box-shadow: 0 0 40px rgba(255, 107, 107, 0.4); }
-      25% { box-shadow: 0 0 40px rgba(254, 202, 87, 0.4); }
-      50% { box-shadow: 0 0 40px rgba(255, 159, 243, 0.4); }
-      75% { box-shadow: 0 0 40px rgba(84, 160, 255, 0.4); }
+      0%, 100% { box-shadow: 0 0 50px rgba(255, 107, 107, 0.5); }
+      25% { box-shadow: 0 0 50px rgba(254, 202, 87, 0.5); }
+      50% { box-shadow: 0 0 50px rgba(255, 159, 243, 0.5); }
+      75% { box-shadow: 0 0 50px rgba(84, 160, 255, 0.5); }
     }
 
     /* ==== Анимации ==== */
     @keyframes glow {
-      from { text-shadow: 0 0 12px rgba(255, 107, 107, 0.45); }
-      to { text-shadow: 0 0 22px rgba(254, 202, 87, 0.8), 0 0 32px rgba(255, 159, 243, 0.34); }
+      from { text-shadow: 0 0 15px rgba(255, 107, 107, 0.5); }
+      to { text-shadow: 0 0 30px rgba(254, 202, 87, 0.8), 0 0 40px rgba(255, 159, 243, 0.4); }
     }
 
     @keyframes gradient {
@@ -526,86 +473,10 @@
     }
     
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(32px); }
+      from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ==== Мобильная адаптация ==== */
-    @media (max-width: 768px) {
-      .container {
-        padding: 15px;
-      }
-
-      .nav {
-        gap: 10px;
-      }
-
-      .nav-btn {
-        padding: 10px 16px;
-        font-size: 0.9rem;
-      }
-
-      .big-card {
-        margin-bottom: 22px;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-
-      .form-container {
-        padding: 22px 18px;
-      }
-
-      .logo {
-        letter-spacing: -1px;
-      }
-
-      /* MOBILE-OPTIM: отключаем тяжёлые эффекты на телефонах */
-      body::before { display: none !important; } /* убираем фоновые частицы */
-      .sparkle::after { display: none !important; } /* убираем ✨ */
-      .big-card, .form-container, .form-input, .form-textarea, .form-select {
-        backdrop-filter: none !important;
-        background: rgba(255,255,255,0.06) !important;
-        border-color: rgba(255,255,255,0.12) !important;
-      }
-      .big-card:hover { transform: none !important; box-shadow: none !important; }
-      .submit-btn { transform: none !important; box-shadow: 0 6px 15px rgba(0,0,0,0.12) !important; }
-      .big-card .emoji { animation: none !important; }
-      .ticket { width: 100%; }
-    }
-
-    @media (max-width: 480px) {
-      .container {
-        padding: 10px;
-      }
-
-      .nav {
-        gap: 8px;
-      }
-
-      .nav-btn {
-        padding: 8px 12px;
-        font-size: 0.82rem;
-      }
-
-      .form-container {
-        padding: 18px 12px;
-      }
-
-      .form-input, .form-textarea, .form-select {
-        padding: 14px 16px;
-        font-size: 0.95rem;
-      }
-
-      .submit-btn {
-        padding: 16px;
-        font-size: 1.05rem;
-      }
-    }
-
-    /* ==== Дополнительные эффекты ==== */
     .sparkle {
       position: relative;
       overflow: visible;
@@ -614,10 +485,10 @@
     .sparkle::after {
       content: '✨';
       position: absolute;
-      top: -10px;
-      right: -10px;
-      animation: sparkle-rotate 2s linear infinite;
-      font-size: 1.5rem;
+      top: -12px;
+      right: -12px;
+      animation: sparkle-rotate 3s linear infinite;
+      font-size: 1.8rem;
     }
 
     @keyframes sparkle-rotate {
@@ -629,17 +500,128 @@
       display: inline-block;
       background: linear-gradient(45deg, #ff6b6b, #feca57);
       color: white;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-left: 10px;
-      animation: pulse 2s ease infinite;
+      padding: 6px 15px;
+      border-radius: 25px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-left: 12px;
+      animation: pulse 2.5s ease infinite;
     }
 
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+      50% { transform: scale(1.06); }
+    }
+
+    /* ==== Мобильная оптимизация ==== */
+    @media (max-width: 768px) {
+      .container {
+        padding: 12px;
+      }
+
+      .nav {
+        gap: 8px;
+        margin: 20px 0 25px;
+      }
+
+      .nav-btn {
+        padding: 12px 18px;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .big-card {
+        margin-bottom: 20px;
+        padding: clamp(20px, 4vw, 35px);
+      }
+
+      .faq-category, .rule-section {
+        padding: 20px 15px;
+        margin-bottom: 20px;
+      }
+
+      .rule-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .rule-emoji {
+        font-size: 2rem;
+      }
+
+      .logo {
+        letter-spacing: -1px;
+      }
+
+      /* Отключение тяжелых эффектов на мобильных */
+      body::before { 
+        display: none !important; 
+      }
+      
+      .sparkle::after { 
+        display: none !important; 
+      }
+      
+      .big-card, .faq-category, .rule-section {
+        backdrop-filter: none !important;
+        background: rgba(255,255,255,0.08) !important;
+        border-color: rgba(255,255,255,0.15) !important;
+      }
+      
+      .big-card:hover, .faq-category:hover, .rule-section:hover { 
+        transform: none !important; 
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important; 
+      }
+      
+      .big-card .emoji { 
+        animation: none !important; 
+      }
+
+      .nav-btn:hover {
+        transform: translateY(-2px) scale(1.02);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 8px;
+      }
+
+      .nav {
+        gap: 6px;
+      }
+
+      .nav-btn {
+        padding: 10px 14px;
+        font-size: 0.85rem;
+      }
+
+      .faq-category, .rule-section {
+        padding: 18px 12px;
+      }
+
+      .rule-list li {
+        padding-left: 15px;
+      }
+
+      .rule-nested {
+        margin-left: 15px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .big-card:hover {
+        transform: translateY(-10px) scale(1.03);
+      }
+
+      .nav-btn:hover {
+        transform: translateY(-5px) scale(1.08);
+      }
+
+      .container {
+        padding: 35px;
+      }
     }
   </style>
 </head>
@@ -651,61 +633,67 @@
     </div>
 
     <nav class="nav">
-      <a href="#" class="nav-btn active" onclick="showSection('support', event)">Поддержка</a>
-      <a href="#" class="nav-btn" onclick="showSection('faq', event)">FAQ</a>
+      <a href="#" class="nav-btn active" onclick="showSection('faq', event)">ЧаВо</a>
       <a href="#" class="nav-btn" onclick="showSection('guarantors', event)">Площадки</a>
       <a href="#" class="nav-btn" onclick="showSection('features', event)">Превосходство</a>
-      <a href="#" class="nav-btn" onclick="showSection('lottery', event)">Лутерея</a>
+      <a href="#" class="nav-btn" onclick="showSection('rules', event)">Правила пользования</a>
       <a href="#" class="nav-btn" onclick="showSection('accounts', event)">Статусы</a>
     </nav>
 
-    <!-- Поддержка -->
-    <div id="support" class="content-section active">
+    <!-- ЧаВо -->
+    <div id="faq" class="content-section active">
       <div class="big-card">
-        <div class="emoji">🎧</div>
-        <h3>Техническая поддержка 24/7</h3>
-        <p>Для вопросов по оплатам обращайтесь к гарантам в ЛС. Исключение: "Я долго не отвечаю в чате" — можно писать сюда.</p>
+        <div class="faq-content">
+          <h1 class="faq-title">❓ FAQ — Часто задаваемые вопросы</h1>
+          
+          <div class="faq-category">
+            <h2>🔑 Аккаунты и доступ</h2>
+            <div class="faq-item">
+              <div class="faq-question">Q: Можно ли менять пароль, ник или защитные данные?</div>
+              <div class="faq-answer">A: ❌ Нет. Это запрещено правилами и приведёт к бану.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Q: Как работает PIN / 2FA?</div>
+              <div class="faq-answer">A: При входе или изменении данных система запрашивает код из приложения-аутентификатора.</div>
+            </div>
+          </div>
 
-        <div class="form-container">
-  <form id="supportForm" action="https://api.web3forms.com/submit" method="POST">
-    <!-- Вставьте сюда свой Web3Forms access_key -->
-    <input type="hidden" name="access_key" value="2d7e7825-935c-4772-a211-76d4a4affbdb">
+          <div class="faq-category">
+            <h2>💸 Оплата и возвраты</h2>
+            <div class="faq-item">
+              <div class="faq-question">Q: Какие способы оплаты поддерживаются?</div>
+              <div class="faq-answer">A: Только те, что указаны на платформе FunPay.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Q: Есть ли возврат средств после входа на аккаунт?</div>
+              <div class="faq-answer">A: Нет. Это указано в наших условиях использования.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Q: Если услуга не предоставлена, будет ли возврат?</div>
+              <div class="faq-answer">A: ✅ Да, в полном объёме. Если ошибка по вашей вине — возврата не будет.</div>
+            </div>
+          </div>
 
-    <!-- URL для перенаправления после успешной отправки -->
-    <input type="hidden" name="redirect" value="https://rentmywaifu.ddns.net/">
+          <div class="faq-category">
+            <h2>🕐 Время ответа</h2>
+            <div class="faq-item">
+              <div class="faq-question">Q: Как долго ждать ответа поддержки?</div>
+              <div class="faq-answer">A: Обычно от 5 минут до 2 часов. В редких случаях до 24 часов.</div>
+            </div>
+          </div>
 
-    <div class="form-row">
-      <input type="email" class="form-input" name="email" placeholder="Ваш email" required>
-      <input type="text" class="form-input" name="order_number" placeholder="Номер заказа (необязательно)">
-    </div>
+          <div class="faq-category">
+            <h2>📢 Жалобы и предложения</h2>
+            <div class="faq-item">
+              <div class="faq-question">Q: Где оставить жалобу или отзыв?</div>
+              <div class="faq-answer">A: В ЛС</div>
+            </div>
+          </div>
 
-    <select class="form-select form-input" name="problem_type">
-      <option>Технические проблемы</option>
-      <option>Проблемы с аккаунтом</option>
-      <option>Долго не отвечаю в ЛС</option>
-      <option>Вопрос по заказу</option>
-      <option>Предложение/Жалоба</option>
-      <option>Запросить код реферала</option>
-      <option>Другое</option>
-    </select>
-
-    <textarea class="form-textarea" name="message" placeholder="Подробно опишите вашу проблему или вопрос..." required></textarea>
-
-    <button type="submit" class="submit-btn">
-      <span>🚀 Отправить запрос</span>
-    </button>
-  </form>
-</div>
-</div>
-</div>
-</div> <!-- ✅ Закрыли support -->
-
-    <!-- FAQ -->
-    <div id="faq" class="content-section">
-      <div class="big-card">
-        <div class="emoji">📚</div>
-        <h3>Часто задаваемые вопросы</h3>
-        <p>Раздел находится в активной разработке. Скоро здесь появятся ответы на самые популярные вопросы!</p>
+          <div class="faq-highlight">
+            👉 Перед тем как писать в поддержку, загляните сюда — 80% вопросов уже разобраны!
+          </div>
+        </div>
       </div>
     </div>
 
@@ -713,15 +701,9 @@
     <div id="guarantors" class="content-section">
       <div class="big-card">
         <div class="emoji">🏆</div>
-        <h3>FunPay (рекомендовано)</h3>
+        <h3>FunPay</h3>
         <p>Основная площадка для сделок. Надежная, быстрая и проверенная временем.</p>
         <a href="https://funpay.com/users/16448769/" target="_blank" rel="noopener">🎮 Перейти на FunPay</a>
-      </div>
-      <div class="big-card">
-        <div class="emoji">⏰</div>
-        <h3>Playerok (альтернатива)</h3>
-        <p>Дополнительная площадка. Время обработки заказов может быть немного больше.</p>
-        <a href="https://playerok.com/profile/RentMyWaifu/products" target="_blank" rel="noopener">🎯 Перейти на Playerok</a>
       </div>
     </div>
 
@@ -754,66 +736,201 @@
       </div>
     </div>
 
-    <!-- Лутерея (новый раздел) -->
-    <div id="lottery" class="content-section">
-      <div class="big-card lottery-card">
-        <div class="confetti" id="confettiArea" aria-hidden="true"></div>
+    <!-- Правила пользования -->
+    <div id="rules" class="content-section">
+      <div class="big-card">
+        <div class="rules-content">
+          <h1 class="rules-title">📝 Условия использования RentMyWaifu</h1>
+          <p style="text-align: center; font-size: 1.1rem; margin-bottom: 30px; color: #feca57; font-weight: 600;">
+            Покупка аккаунта означает автоматическое согласие с правилами. Пожалуйста, внимательно прочитайте все пункты перед совершением покупки.
+          </p>
+          
+          <div class="rule-section">
+            <div class="rule-header">
+              <div class="rule-emoji">1️⃣</div>
+              <h2 class="rule-title">Общие запреты</h2>
+            </div>
+            
+            <div class="rule-subsection">
+              <h3 class="rule-subtitle">1.1. Нарушение правил Roblox</h3>
+              <ul class="rule-list">
+                <li>Любые действия, противоречащие правилам Roblox, строго запрещены.</li>
+                <li>Примеры:
+                  <ul class="rule-nested">
+                    <li>Взлом голосового чата.</li>
+                    <li>Использование багов или эксплойтов для получения преимуществ.</li>
+                    <li>Любые действия, которые могут привести к бану аккаунта.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
 
-        <div class="lottery-header">
-          <div class="lottery-ribbon">🎟️ Эксклюзив — Лутерея</div>
-          <div class="lottery-title">🎉 Лутерея Robux от RentMyWaifu 🎉</div>
-          <div style="font-size:0.95rem;opacity:0.9;">Участвуйте автоматически — выигрывайте Robux!</div>
-        </div>
+            <div class="rule-subsection">
+              <h3 class="rule-subtitle">1.2. Изменение данных безопасности аккаунта</h3>
+              <ul class="rule-list">
+                <li>Запрещено менять логин, пароль и привязки (почта, телефон, двухфакторная аутентификация).</li>
+              </ul>
+            </div>
 
-        <div class="ticket-visual" aria-hidden="false">
-          <div class="ticket">
-            <div class="row"><div class="code">Как участвовать:</div></div>
-            <div class="row"><div class="small">1.</div><div class="small">Каждые <strong>10₽</strong> потраченные на аренду аккаунтов или скинов дают вам <strong>1 билет</strong>.</div></div>
-            <div class="row"><div class="small">2.</div><div class="small">Все билеты автоматически добавляются в общий “барабан” для лутереи.</div></div>
-            <div class="row"><div class="small">3.</div><div class="small">Победители определяются случайным выбором и объявляются на сайте/в сообществе.</div></div>
+            <div class="rule-subsection">
+              <h3 class="rule-subtitle">1.3. Смена ника аккаунта</h3>
+              <ul class="rule-list">
+                <li>Запрещено менять ник.</li>
+              </ul>
+              <div class="rule-penalty">Штраф за нарушение: 20 рублей.</div>
+            </div>
+
+            <div class="rule-subsection">
+              <h3 class="rule-subtitle">1.4. Скины аккаунта</h3>
+              <ul class="rule-list">
+                <li>Нельзя устанавливать непристойные или оскорбительные скины.</li>
+                <li>Смена скина на нормальный разрешена.</li>
+              </ul>
+            </div>
+
+            <div class="rule-subsection">
+              <h3 class="rule-subtitle">1.5. Ответственность пользователя</h3>
+              <ul class="rule-list">
+                <li>Пользователь несёт полную ответственность за все действия на аккаунте.</li>
+                <li>Нельзя перекладывать вину на других (например: "мой брат сидел за компьютером").</li>
+              </ul>
+            </div>
           </div>
 
-          <div class="ticket" aria-hidden="true">
-            <div class="row"><div class="code">Призы:</div></div>
-            <div class="row"><div class="small">🏆 1 место:</div><div class="small"><strong>100 Robux</strong></div></div>
-            <div class="row"><div class="small">🥈 2 место:</div><div class="small"><strong>50 Robux</strong></div></div>
-            <div class="row"><div class="small">🥉 3 место:</div><div class="small"><strong>25 Robux</strong></div></div>
+          <div class="rule-section">
+            <div class="rule-header">
+              <div class="rule-emoji">2️⃣</div>
+              <h2 class="rule-title">Баны и видео-доказательства</h2>
+            </div>
+
+            <div class="rule-subsection">
+              <h3 class="rule-subtitle">2.1. Бан не по вашей вине</h3>
+              <ul class="rule-list">
+                <li>Для рассмотрения необходимо предоставить видео длительностью 4–5 минут до бана.</li>
+                <li>Без видео запрос на разбирательство отклоняется автоматически.</li>
+              </ul>
+            </div>
+
+            <div class="rule-subsection">
+              <h3 class="rule-subtitle">2.2. Бан по вашей вине</h3>
+              <ul class="rule-list">
+                <li>Тариф ниже 10 часов: время аренды урезается на 50%.</li>
+                <li>Два бана подряд: покупка любых тарифов менее 10 часов невозможна.</li>
+                <li>Как снять санкции: приобрести любой тариф выше 5 часов.</li>
+              </ul>
+            </div>
+
+            <div class="rule-tip">⚠️ Рекомендуется вести запись ваших действий при аренде аккаунта, чтобы избежать спорных ситуаций.</div>
+          </div>
+
+          <div class="rule-section">
+            <div class="rule-header">
+              <div class="rule-emoji">3️⃣</div>
+              <h2 class="rule-title">Финансовые условия</h2>
+            </div>
+
+            <div class="rule-subsection">
+              <h3 class="rule-subtitle">3.1. Возврат средств</h3>
+              <ul class="rule-list">
+                <li>После успешного входа на аккаунт возврат средств не производится.</li>
+              </ul>
+            </div>
+
+            <div class="rule-subsection">
+              <h3 class="rule-subtitle">3.2. Удержание средств продавцом</h3>
+              <ul class="rule-list">
+                <li>Продавец вправе удержать деньги при попытке изменения любых данных, перечисленных выше (логин, пароль, защитные привязки, ник).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="rule-section">
+            <div class="rule-header">
+              <div class="rule-emoji">4️⃣</div>
+              <h2 class="rule-title">Безопасность входа</h2>
+            </div>
+
+            <div class="rule-subsection">
+              <h3 class="rule-subtitle">4.1. Использование реального устройства</h3>
+              <ul class="rule-list">
+                <li>Входить в аккаунт только с реального устройства, на котором не установлены запрещённые программы.</li>
+              </ul>
+            </div>
+
+            <div class="rule-subsection">
+              <h3 class="rule-subtitle">4.2. Запрещённые методы доступа</h3>
+              <ul class="rule-list">
+                <li>VPN</li>
+                <li>Виртуальные машины</li>
+                <li>Tor-браузеры</li>
+              </ul>
+            </div>
+
+            <div class="rule-subsection">
+              <h3 class="rule-subtitle">4.3. Последствия нарушения правил безопасности</h3>
+              <ul class="rule-list">
+                <li>Нарушение может привести к тому, что Roblox кикнет вас с аккаунта или заблокирует его.</li>
+              </ul>
+            </div>
+
+            <div class="rule-tip">💡 Совет: используйте стабильное соединение без подозрительных прокси, чтобы избежать проблем.</div>
+          </div>
+
+          <div class="rule-section">
+            <div class="rule-header">
+              <div class="rule-emoji">5️⃣</div>
+              <h2 class="rule-title">Конфиденциальность и сторонние программы</h2>
+            </div>
+
+            <div class="rule-subsection">
+              <h3 class="rule-subtitle">5.1. Передача аккаунта</h3>
+              <ul class="rule-list">
+                <li>Запрещено передавать аккаунт третьим лицам.</li>
+              </ul>
+            </div>
+
+            <div class="rule-subsection">
+              <h3 class="rule-subtitle">5.2. Сторонние программы</h3>
+              <ul class="rule-list">
+                <li>Запрещено использовать:
+                  <ul class="rule-nested">
+                    <li>Скрипты</li>
+                    <li>Читы</li>
+                    <li>Любые сторонние программы, нарушающие правила Roblox</li>
+                  </ul>
+                </li>
+                <li>Исключение: программы-макросы, которые не нарушают правила Roblox.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="rule-section">
+            <div class="rule-header">
+              <div class="rule-emoji">6️⃣</div>
+              <h2 class="rule-title">Частые вопросы</h2>
+            </div>
+
+            <ul class="rule-list">
+              <li>Где посмотреть тарифы и правила аренды? RentMyWaifu.ddns.net</li>
+              <li>Что делать при бане по моей вине? Смотреть пункт 2.2 и соблюдать рекомендации по снятию санкций.</li>
+              <li>Можно ли менять скин или ник? Нет, см. пункт 1.3 и 1.4. (скин менять на НОРМАЛЬНЫЙ МОЖНО)</li>
+            </ul>
+          </div>
+
+          <div class="rule-section">
+            <div class="rule-header">
+              <div class="rule-emoji">7️⃣</div>
+              <h2 class="rule-title">Рекомендации для безопасной аренды</h2>
+            </div>
+
+            <ul class="rule-list">
+              <li>Записывайте видео своих действий.</li>
+              <li>Не используйте сторонние программы, которые могут нарушить правила Roblox.</li>
+              <li>Проверяйте стабильность соединения и используйте реальные устройства.</li>
+              <li>Следите за временем аренды (но обычно кикает автоматически).</li>
+            </ul>
           </div>
         </div>
-
-        <div class="prizes" role="list">
-          <div class="prize" role="listitem">
-            <h4>1 место — 100 Robux</h4>
-            <p>Большой приз для счастливчика — зачислим сразу после подтверждения аккаунта.</p>
-          </div>
-          <div class="prize" role="listitem">
-            <h4>2 место — 50 Robux</h4>
-            <p>Второй приз — приятный подарок к вашим покупкам.</p>
-          </div>
-          <div class="prize" role="listitem">
-            <h4>3 место — 25 Robux</h4>
-            <p>Третий приз — бонус, который поднимет настроение.</p>
-          </div>
-        </div>
-
-        <div class="rules" aria-label="Правила лутереи">
-          <strong>Правила и условия:</strong>
-          <ul>
-            <li>Лутерея действует с <strong>20 сентября по 13 ноября</strong>.</li>
-            <li>Чем больше билетов — тем выше шанс на победу.</li>
-            <li>Билеты начисляются только за реальные покупки на сайте.</li>
-            <li>Победители определяются случайным выбором (рандомно) и будут объявлены на сайте/в нашем сообществе.</li>
-            <li>Призы выдаются только участникам лутереи.</li>
-            <li>Участие в лутерее автоматически означает согласие с правилами.</li>
-            <li>Лутерея не является азартной игрой и проводится честно — все билеты участвуют одинаково.</li>
-          </ul>
-          <div style="margin-top:8px; font-weight:700;">💡 Совет: чаще покупайте — увеличивайте свои шансы на победу!</div>
-        </div>
-
-        <div class="lottery-cta">
-          <a class="cta-join" href="#support" onclick="scrollToSupport(event)">🎟️ Проверить билеты</a>
-        </div>
-
       </div>
     </div>
 
@@ -855,100 +972,24 @@
         if (ev && ev.currentTarget) ev.currentTarget.classList.add('active');
         else if (event && event.target) event.target.classList.add('active');
       } catch(e) {}
-      // если открыт лутерея — запуск конфетти
-      if (sectionId === 'lottery') startConfetti();
     }
 
-    // Кнопка проверки билетов — пример прокрутки к форме поддержки
-    function scrollToSupport(e) {
-      e.preventDefault();
-      showSection('support', e);
-      const form = document.getElementById('supportForm');
-      if (form) {
-        form.scrollIntoView({behavior: 'smooth', block: 'center'});
-      }
-    }
-
-    // Обработка формы (как было)
-    let formAlreadySubmitted = false;
-    document.getElementById('supportForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const submitBtn = form.querySelector('.submit-btn span');
-      const originalText = submitBtn.innerHTML;
-
-      submitBtn.innerHTML = '⏳ Отправляется...';
-      form.querySelector('.submit-btn').disabled = true;
-
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form)
-      }).then(response => {
-        if (response.ok) {
-          submitBtn.innerHTML = '✅ Отправлено!';
-          setTimeout(() => alert('🎉 Спасибо! Ваш запрос отправлен!'), 500);
-          form.reset();
-        } else {
-          throw new Error('Ошибка при отправке через fetch');
-        }
-      }).catch(error => {
-        // Не делаем form.submit()! Просто показываем сообщение
-        submitBtn.innerHTML = '✅ Отправлено!';
-        setTimeout(() => {
-          alert('🎉 Спасибо! Ваш запрос отправлен! Ожидайте ответ по указанной почте через 30 - 120 минут');
-        }, 500);
-        console.error(error);
-      }).finally(() => {
-        setTimeout(() => {
-          submitBtn.innerHTML = originalText;
-          form.querySelector('.submit-btn').disabled = false;
-        }, 2000);
-      });
-    });
-
-    // Конфетти: простой генератор. Запускается при открытии раздела "lottery".
-    function startConfetti() {
-      const area = document.getElementById('confettiArea');
-      if (!area) return;
-      area.innerHTML = ''; // перезапуск
-      const colors = ['#FF6B6B','#FEC857','#FF9FF3','#54A0FF','#6EE7B7','#FFD700'];
-      const count = Math.min(Math.max(Math.floor(window.innerWidth/12), 18), 120);
-      for (let i=0;i<count;i++){
-        const el = document.createElement('span');
-        const size = Math.random() * 10 + 6;
-        el.style.width = size + 'px';
-        el.style.height = (size * 1.2) + 'px';
-        el.style.left = Math.random() * 100 + '%';
-        el.style.top = (Math.random() * 10 - 10) + 'vh';
-        el.style.background = colors[Math.floor(Math.random()*colors.length)];
-        el.style.transform = 'rotate(' + (Math.random()*360) + 'deg)';
-        el.style.opacity = 0.95;
-        el.style.animationDuration = (Math.random()*2 + 3.2) + 's';
-        el.style.animationDelay = (Math.random()*0.6) + 's';
-        area.appendChild(el);
-        // авто-удаление
-        (function(node){
-          setTimeout(()=>{ try{ node.remove() }catch(e){} }, 7000);
-        })(el);
-      }
-    }
-
-    // Авто-инициализация: если страница открыла лутерею через хеш
+    // Наблюдатель для карточек (плавные появления)
     document.addEventListener('DOMContentLoaded', function() {
       if (location.hash && document.getElementById(location.hash.replace('#',''))) {
         const id = location.hash.replace('#','');
         showSection(id, {});
       }
-      // Наблюдатель для карточек (плавные появления)
-      const cards = document.querySelectorAll('.big-card');
+      
+      const cards = document.querySelectorAll('.big-card, .faq-category, .rule-section');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.style.animationDelay = (Math.random() * 0.25) + 's';
+            entry.target.style.animationDelay = (Math.random() * 0.3) + 's';
             entry.target.classList.add('animate');
           }
         });
-      }, { threshold: 0.12 });
+      }, { threshold: 0.15 });
       cards.forEach(card => observer.observe(card));
     });
   </script>
